@@ -200,6 +200,7 @@ export { palettes } from './core/palettes'
 export type {
   AvatarProps,
   AvatarOptions,
+  EarSize,
   AvatarConfig,
   AvatarColor,
   AvatarGradient,
@@ -230,6 +231,7 @@ type NoseStyle = 'short' | 'round' | 'long'
 type MouthStyle = 'smile' | 'laugh' | 'peace'
 type ShirtStyle = 'tee' | 'hoodie' | 'polo'
 type PaletteName = 'default' | 'pastel' | 'vivid' | 'mono'
+type EarSize = 'small' | 'big'
 type AvatarColor = string
 interface AvatarGradient { from: string; to: string; angle?: number }
 

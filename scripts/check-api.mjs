@@ -41,8 +41,21 @@ for (const [entry, names] of Object.entries(EXPECTED)) {
 }
 
 const docs = readFileSync('docs/api.md', 'utf8')
-for (const name of ['Avatar', 'createAvatar', 'palettes', 'avatarToSvg']) {
+const source = readFileSync('src/index.ts', 'utf8')
+const typeBlock = /export type \{([\s\S]*?)\} from '.\/core\/types'/.exec(source)
+if (!typeBlock) failures.push('src/index.ts has no public type export block')
+const typeNames = (typeBlock?.[1] ?? '')
+  .split(',')
+  .map((name) => name.trim())
+  .filter(Boolean)
+  .concat('AvatarProps')
+
+for (const name of ['Avatar', 'createAvatar', 'palettes', 'avatarToSvg', ...typeNames]) {
   if (!docs.includes(name)) failures.push(`docs/api.md does not document ${name}`)
+}
+for (const name of typeNames) {
+  const documented = new RegExp(`(type|interface) ${name}\\b`)
+  if (!documented.test(docs)) failures.push(`docs/api.md has no type signature for ${name}`)
 }
 
 const packageJson = require('../package.json')

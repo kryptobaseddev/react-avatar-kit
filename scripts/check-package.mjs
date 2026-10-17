@@ -13,6 +13,7 @@ const pkg = JSON.parse(readFileSync('package.json', 'utf8'))
 const REQUIRED_FILES = [
   'package.json',
   'README.md',
+  'docs/api.md',
   'LICENSE',
   'NOTICE.md',
   'dist/index.js',
