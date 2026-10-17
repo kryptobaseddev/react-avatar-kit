@@ -14,6 +14,7 @@ const REQUIRED_FILES = [
   'package.json',
   'README.md',
   'docs/api.md',
+  'docs/integrations.md',
   'LICENSE',
   'NOTICE.md',
   'dist/index.js',

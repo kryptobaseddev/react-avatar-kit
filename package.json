@@ -29,6 +29,7 @@
   "files": [
     "dist",
     "docs/api.md",
+    "docs/integrations.md",
     "README.md",
     "LICENSE",
     "NOTICE.md",
