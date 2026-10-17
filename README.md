@@ -153,7 +153,7 @@ npm run check:api     # public API surface, ESM and CJS
 npm run check:package # tarball contents, exports, size budget
 npm run check:ssr     # react-server condition + react-dom/server render
 npm run check:consumer# installs the tarball under React 18 and 19
-npm run test:e2e      # Playwright: playground behaviour
+npm run test:e2e      # Playwright: playground behaviour + WCAG A/AA audit
 npm run test:visual   # Playwright: visual regression matrix
 npm run check:all     # every gate above, in order
 ```
