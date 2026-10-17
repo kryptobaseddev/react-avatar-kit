@@ -1,3 +1,0 @@
-module.exports=[[65845,a=>{var b=a.i(31463);a.s(["default",0,function({children:a}){return(0,b.jsx)("html",{lang:"en",children:(0,b.jsx)("body",{children:a})})},"metadata",0,{title:"react-avatar-kit · Next.js"}])},18625,(a,b,c)=>{b.exports=a.r(18622)},31463,(a,b,c)=>{b.exports=a.r(18625).vendored["react-rsc"].ReactJsxRuntime}],18622,(a,b,c)=>{b.exports=a.x("next/dist/compiled/next-server/app-page-turbo.runtime.prod.js",()=>require("next/dist/compiled/next-server/app-page-turbo.runtime.prod.js"))},70159,function(a){a.n(a.i(65845))}];
-
-//# sourceMappingURL=%5Broot-of-the-server%5D__1551obvh8ubi4._.js.map
