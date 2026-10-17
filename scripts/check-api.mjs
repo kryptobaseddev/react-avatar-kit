@@ -53,6 +53,16 @@ const typeNames = (typeBlock?.[1] ?? '')
 for (const name of ['Avatar', 'createAvatar', 'palettes', 'avatarToSvg', ...typeNames]) {
   if (!docs.includes(name)) failures.push(`docs/api.md does not document ${name}`)
 }
+
+const runtimeSignatures = {
+  Avatar: /function Avatar\(/,
+  createAvatar: /function createAvatar\(/,
+  palettes: /const palettes: Record<PaletteName, Palette>/,
+  avatarToSvg: /function avatarToSvg\(/,
+}
+for (const [name, signature] of Object.entries(runtimeSignatures)) {
+  if (!signature.test(docs)) failures.push(`docs/api.md has no signature for ${name}`)
+}
 for (const name of typeNames) {
   const documented = new RegExp(`(type|interface) ${name}\\b`)
   if (!documented.test(docs)) failures.push(`docs/api.md has no type signature for ${name}`)

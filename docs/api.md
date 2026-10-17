@@ -61,6 +61,10 @@ interface AvatarProps extends AvatarOptions {
 Every field of `AvatarOptions` may also be passed directly as a prop, so
 `<Avatar seed="ada" hair="mohawk" shirt="hoodie" />` works.
 
+```ts
+function Avatar(props: AvatarProps): ReactElement
+```
+
 ## `createAvatar()`
 
 ```ts
@@ -164,10 +168,17 @@ individual colours can be overridden afterwards.
 ## `avatarToSvg()`
 
 ```ts
+interface AvatarToSvgOptions {
+  size?: number
+  alt?: string
+  title?: string
+  shape?: Shape
+}
+
 // import { avatarToSvg } from 'react-avatar-kit/server'
 function avatarToSvg(
   input?: string | AvatarConfig | AvatarOptions,
-  options?: { size?: number; alt?: string; title?: string; shape?: Shape }
+  options?: AvatarToSvgOptions
 ): string
 ```
 
