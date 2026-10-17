@@ -1,7 +1,8 @@
 import type { ReactElement, ReactNode } from 'react'
 import { brighten } from '../core/color'
 import type { AvatarConfig } from '../core/types'
-import { Headphones } from './art/accessories/headphones'
+import { HeadphonesBand } from './art/accessories/headphones-band'
+import { HeadphonesCup } from './art/accessories/headphones-cup'
 import { HoopEarring } from './art/accessories/hoop'
 import { StudEarring } from './art/accessories/stud'
 import { BrowsArched, viewBox as browsArchedViewBox } from './art/brows/arched'
@@ -300,7 +301,7 @@ function AccessoriesArt({
       {config.earring === 'stud' ? <StudEarring uid={uid} /> : null}
       {config.earring === 'hoop' ? <HoopEarring uid={uid} /> : null}
       {config.headphones === 'over-ear' ? (
-        <Headphones color={config.headphoneColor ?? '#506AF4'} uid={uid} />
+        <HeadphonesCup color={config.headphoneColor ?? '#506AF4'} uid={uid} />
       ) : null}
     </>
   )
@@ -308,20 +309,27 @@ function AccessoriesArt({
 
 /** Draws the layered avatar inside the root canvas. */
 export function AvatarArt({ config, uid }: { config: AvatarConfig; uid: string }): ReactElement {
+  const bandColor = config.headphoneColor ?? '#506AF4'
+  const hasHeadphones = config.headphones === 'over-ear'
+  // A mohawk crest should sit over the band, so the band is painted first for that hair.
+  const bandUnderHair = hasHeadphones && config.hat === 'none' && config.hair === 'mohawk'
+
   return (
     <>
       <Part box={layout.face} viewBox={faceViewBox}>
         <Face color={config.skin} uid={uid} />
       </Part>
+      {bandUnderHair ? <HeadphonesBand color={bandColor} uid={uid} /> : null}
       {config.hat === 'none' ? <HairArt config={config} uid={uid} /> : null}
       <HatArt config={config} uid={uid} />
-      <FacialHairArt config={config} uid={uid} />
       <BrowsArt config={config} uid={uid} />
       <EyesArt config={config} uid={uid} />
       <GlassesArt config={config} uid={uid} />
       <EarArt config={config} uid={uid} />
       <NoseArt config={config} uid={uid} />
       <MouthArt config={config} uid={uid} />
+      <FacialHairArt config={config} uid={uid} />
+      {hasHeadphones && !bandUnderHair ? <HeadphonesBand color={bandColor} uid={uid} /> : null}
       <AccessoriesArt config={config} uid={uid} />
       <ShirtArt config={config} uid={uid} />
     </>

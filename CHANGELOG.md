@@ -4,6 +4,16 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.1.2 — 2026-10-17
+
+### Fixed
+
+- Moustache and goatee now draw above the mouth layer with a solid lip-covering shape,
+  instead of being clipped into a squiggle by the mouth artwork.
+- Headphones show a single left ear cup; the band ends shorter with a downward curve into
+  the hair instead of looping over the crest.
+- A mohawk crest now layers over the band, so the band reads as passing underneath it.
+
 ## 1.1.1 — 2026-10-17
 
 ### Fixed
