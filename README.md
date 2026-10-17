@@ -163,9 +163,27 @@ Update them deliberately with `npm run test:visual:update` and review the diff.
 
 ## Releasing
 
-1. `npm version <patch|minor|major>`
-2. Push the tag. `publish.yml` publishes with npm provenance once `NPM_TOKEN` is set.
-3. The playground deploys from `main` through `pages.yml`.
+Publishing is a tag push, so the artifact is always built by the same workflow that
+verified it.
+
+**Route A — from this machine**
+
+```sh
+npm login                 # or: npm login --auth-type=web
+npm run check:all         # every gate, in order
+npm publish --access public
+```
+
+**Route B — from CI (with provenance)**
+
+1. Create an npm granular access token with publish rights for `react-avatar-kit`
+   (or configure trusted publishing for `kryptobaseddev/react-avatar-kit`).
+2. Add it as the `NPM_TOKEN` repository secret (Settings → Secrets → Actions).
+3. `npm version <patch|minor|major> && git push --follow-tags`.
+   `publish.yml` builds, checks the tarball, and publishes with provenance.
+
+The playground deploys from `main` through `pages.yml`; Pages must be set to
+**Source: GitHub Actions** (already configured for this repository).
 
 ## License
 
