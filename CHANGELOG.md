@@ -4,6 +4,29 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.1.0 — 2026-10-17
+
+### Added
+
+- Facial hair: `moustache`, `handlebar`, `beard`, `goatee`, `stubble`.
+- Accessories: `earring: "stud" | "hoop"` and `headphones: "over-ear"` with
+  `headphoneColor`.
+- Hair style `buzz`.
+- Palettes `earth` and `neon`.
+- Searchable docs site at `/docs` with an API reference, guides, framework examples and an
+  OG-image demo.
+- Four runnable examples: Next.js App Router, Vite, React Router 7 and a Remix-style route.
+
+### Changed
+
+- Library sourcemaps are no longer published; the tarball stays under 210 kB unpacked.
+- README and API docs cover the new surface and link the docs site.
+
+### Compatibility
+
+- The new parts are opt-in. Existing seeds render byte-identically; `check:compat` locks
+  the frozen fixture.
+
 ## 1.0.1 — 2026-10-17
 
 ### Changed
