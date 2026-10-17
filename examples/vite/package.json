@@ -1,0 +1,20 @@
+{
+  "name": "example-vite",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit && vite build"
+  },
+  "dependencies": {
+    "react": "^19",
+    "react-dom": "^19",
+    "react-avatar-kit": "file:../.."
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6",
+    "typescript": "^7",
+    "vite": "^8"
+  }
+}

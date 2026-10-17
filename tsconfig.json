@@ -6,7 +6,6 @@
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
     "types": ["vite/client", "node"],
-
     "strict": true,
     "exactOptionalPropertyTypes": true,
     "noUncheckedIndexedAccess": true,
@@ -17,7 +16,6 @@
     "noUnusedParameters": true,
     "useUnknownInCatchVariables": true,
     "forceConsistentCasingInFileNames": true,
-
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "esModuleInterop": true,
@@ -32,7 +30,9 @@
     "site/vite.config.ts",
     "e2e",
     "tsdown.config.ts",
-    "vitest.config.ts"
+    "vitest.config.ts",
+    "docs-site/src",
+    "docs-site/vite.config.ts"
   ],
   "exclude": ["node_modules", "dist", "site/dist"]
 }

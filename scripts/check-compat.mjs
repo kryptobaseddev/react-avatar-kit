@@ -16,7 +16,9 @@ for (const golden of fixture.cases) {
   const actualJson = JSON.stringify(actual)
   const expectedJson = JSON.stringify(expected)
   if (actualJson !== expectedJson) {
-    failures.push(`seed ${JSON.stringify(golden.input)} changed\n  expected ${expectedJson}\n  actual   ${actualJson}`)
+    failures.push(
+      `seed ${JSON.stringify(golden.input)} changed\n  expected ${expectedJson}\n  actual   ${actualJson}`,
+    )
   }
 }
 

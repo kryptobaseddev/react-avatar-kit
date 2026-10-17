@@ -111,10 +111,10 @@ interface AvatarOptions {
 | Option | Type | Default | Notes |
 | --- | --- | --- | --- |
 | `seed` | `string` | `"default"` | Drives every field that is not overridden. |
-| `palette` | `"default" \| "pastel" \| "vivid" \| "mono"` | `"default"` | Colour family used for generated colours. Explicit colours always win. |
+| `palette` | `"default" \| "pastel" \| "vivid" \| "mono" \| "earth" \| "neon"` | `"default"` | Colour family used for generated colours. Explicit colours always win. |
 | `background` | `string \| AvatarGradient` | generated | CSS colour or `{ from, to, angle? }` gradient. |
 | `skin` | `string` | generated | Any CSS colour. |
-| `hair` | `"short" \| "thick" \| "mohawk" \| "long" \| "bob" \| "none"` | generated | Only drawn when `hat` is `"none"`, so hats keep their silhouette. |
+| `hair` | `"short" \| "thick" \| "mohawk" \| "long" \| "bob" \| "buzz" \| "none"` | generated | Only drawn when `hat` is `"none"`, so hats keep their silhouette. |
 | `hairColor` | `string` | generated | Any CSS colour. |
 | `highlight` | `boolean` | `false` | Adds the lighter second tone to the mohawk artwork. Shirts always keep their built-in fold shading. |
 | `hat` | `"none" \| "beanie" \| "turban"` | generated | Usually `"none"`. A hat replaces the hair silhouette; `hair` stays in the config. |
@@ -128,6 +128,10 @@ interface AvatarOptions {
 | `shirt` | `"tee" \| "hoodie" \| "polo"` | generated | |
 | `shirtColor` | `string` | generated | Any CSS colour. |
 | `shape` | `"circle" \| "rounded" \| "square" \| "none"` | `"circle"` | Stored in the config so `<Avatar {...config} />` round-trips. |
+| `facialHair` | `"none" \| "moustache" \| "handlebar" \| "beard" \| "goatee" \| "stubble"` | `"none"` | Opt-in 1.1 part; not generated for new seeds so seeded output stays stable. |
+| `earring` | `"none" \| "stud" \| "hoop"` | `"none"` | Opt-in 1.1 accessory on the earlobe. |
+| `headphones` | `"none" \| "over-ear"` | `"none"` | Opt-in 1.1 accessory drawn above hair and hats. |
+| `headphoneColor` | `string` | `"#506AF4"` | Only used when `headphones` is set. |
 
 `AvatarColor` is a `string` holding any CSS colour (`#rgb`, `#rrggbb`, `rgb()`,
 `oklch()`, a named colour, …). Invalid values fall back to the palette colour.
@@ -215,7 +219,10 @@ export type {
   AvatarOptions,
   BrowStyle,
   EarSize,
+  Earring,
   EyeStyle,
+  FacialHair,
+  Headphones,
   GlassesStyle,
   HairStyle,
   HatStyle,
@@ -235,7 +242,7 @@ Type signatures:
 
 ```ts
 type Shape = 'circle' | 'rounded' | 'square' | 'none'
-type HairStyle = 'short' | 'thick' | 'mohawk' | 'long' | 'bob' | 'none'
+type HairStyle = 'short' | 'thick' | 'mohawk' | 'long' | 'bob' | 'buzz' | 'none'
 type HatStyle = 'none' | 'beanie' | 'turban'
 type EyeStyle = 'round' | 'oval' | 'smile'
 type BrowStyle = 'straight' | 'arched'
@@ -243,8 +250,11 @@ type GlassesStyle = 'none' | 'round' | 'square'
 type NoseStyle = 'short' | 'round' | 'long'
 type MouthStyle = 'smile' | 'laugh' | 'peace'
 type ShirtStyle = 'tee' | 'hoodie' | 'polo'
-type PaletteName = 'default' | 'pastel' | 'vivid' | 'mono'
+type PaletteName = 'default' | 'pastel' | 'vivid' | 'mono' | 'earth' | 'neon'
 type EarSize = 'small' | 'big'
+type FacialHair = 'none' | 'moustache' | 'handlebar' | 'beard' | 'goatee' | 'stubble'
+type Earring = 'none' | 'stud' | 'hoop'
+type Headphones = 'none' | 'over-ear'
 type AvatarColor = string
 interface AvatarGradient { from: string; to: string; angle?: number }
 

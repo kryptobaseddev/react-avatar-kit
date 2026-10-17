@@ -10,8 +10,8 @@ avatar out — the same face on the server, in the browser, and in your database
 [![license](https://img.shields.io/npm/l/react-avatar-kit.svg)](./LICENSE)
 [![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](./package.json)
 
-**[Live playground →](https://kryptobaseddev.github.io/react-avatar-kit/)** — edit an avatar,
-copy the seed, export a PNG.
+**[Live playground →](https://kryptobaseddev.github.io/react-avatar-kit/)** · **[Docs →](https://kryptobaseddev.github.io/react-avatar-kit/docs/)**
+— searchable API, guides, framework examples and an OG-image demo.
 
 ## Install
 
@@ -52,6 +52,23 @@ any stable string. The same seed always renders the same avatar.
   to any size and exports to PNG.
 - **Data, not art direction.** `createAvatar()` returns a plain JSON object you can store
   in Postgres, put in a session, or serve from an API.
+
+## What's in 1.1
+
+New opt-in parts, drawn in the same flat 4px-stroke language:
+
+- **Facial hair:** `moustache`, `handlebar`, `beard`, `goatee`, `stubble`
+- **Accessories:** `earring: "stud" | "hoop"`, `headphones: "over-ear"` with `headphoneColor`
+- **Hair:** `buzz`
+- **Palettes:** `earth` and `neon`
+
+```tsx
+<Avatar seed="ada" facialHair="beard" earring="hoop" headphones="over-ear" palette="earth" />
+```
+
+These fields are opt-in: existing seeds render exactly as they did in 1.0, which the
+[frozen fixture](https://github.com/kryptobaseddev/react-avatar-kit/blob/main/test/golden/seeds.json)
+and `npm run check:compat` enforce.
 
 ## API at a glance
 

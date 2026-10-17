@@ -29,7 +29,12 @@ export default defineConfig({
   projects: [
     {
       name: 'e2e',
-      testMatch: '**/*.e2e.ts',
+      testMatch: ['**/playground.e2e.ts', '**/a11y.e2e.ts'],
+      use: { ...devices['Desktop Chrome'], viewport: { width: 1280, height: 900 } },
+    },
+    {
+      name: 'docs',
+      testMatch: '**/docs.e2e.ts',
       use: { ...devices['Desktop Chrome'], viewport: { width: 1280, height: 900 } },
     },
     {

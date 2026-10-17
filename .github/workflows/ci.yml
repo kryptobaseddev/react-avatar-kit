@@ -49,6 +49,21 @@ jobs:
       - name: Server rendering and React Server Component safety
         run: npm run check:ssr
 
+      - name: Seeded output compatibility
+        run: npm run check:compat
+
+      - name: Build docs site
+        run: npm run build:docs
+
+      - name: Docs search coverage
+        run: npm run check:docs
+
+      - name: Docs browser tests
+        run: npm run test:docs
+
+      - name: Framework examples
+        run: npm run check:examples
+
       - name: Consumer smoke test (React 18 and 19)
         run: npm run check:consumer
 

@@ -86,7 +86,7 @@
   "scripts": {
     "build": "tsdown",
     "dev": "vite --config site/vite.config.ts",
-    "build:site": "vite build --config site/vite.config.ts",
+    "build:site": "vite build --config site/vite.config.ts && npm run build:docs && rm -rf site/dist/docs && cp -R docs-site/dist site/dist/docs",
     "preview:site": "vite preview --config site/vite.config.ts",
     "typecheck": "tsc --noEmit",
     "lint": "biome check .",
@@ -103,9 +103,13 @@
     "check:consumer": "node scripts/check-consumer.mjs",
     "check:repo": "node scripts/check-repo.mjs",
     "check:pages": "node scripts/check-pages.mjs",
-    "check:all": "npm run lint && npm run typecheck && npm test && npm run build && npm run check:api && npm run check:package && npm run check:ssr && npm run check:consumer && npm run test:e2e && npm run test:visual",
+    "check:all": "npm run lint && npm run typecheck && npm test && npm run build && npm run check:api && npm run check:package && npm run check:ssr && npm run check:compat && npm run build:docs && npm run check:docs && npm run check:consumer && npm run test:e2e && npm run test:docs && npm run test:visual",
     "prepublishOnly": "npm run build && npm run check:package",
-    "check:compat": "npm run build && node scripts/check-compat.mjs"
+    "check:compat": "npm run build && node scripts/check-compat.mjs",
+    "build:docs": "node scripts/build-docs-index.mjs && vite build --config docs-site/vite.config.ts",
+    "check:docs": "node scripts/check-docs.mjs",
+    "test:docs": "playwright test --config e2e/playwright.config.ts --project=docs",
+    "check:examples": "npm run build && node scripts/check-examples.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",

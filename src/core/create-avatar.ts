@@ -26,7 +26,15 @@ const DEFAULT_SEED = 'default'
 const RANDOM_ALPHABET = '0123456789abcdefghijklmnopqrstuvwxyz'
 const CONTRAST_TARGET = 0.16
 
-const HAIR_STYLES: readonly HairStyle[] = ['short', 'thick', 'mohawk', 'long', 'bob', 'buzz', 'none']
+const HAIR_STYLES: readonly HairStyle[] = [
+  'short',
+  'thick',
+  'mohawk',
+  'long',
+  'bob',
+  'buzz',
+  'none',
+]
 const HAT_STYLES: readonly HatStyle[] = ['none', 'beanie', 'turban']
 const EYE_STYLES: readonly EyeStyle[] = ['round', 'oval', 'smile']
 const BROW_STYLES: readonly BrowStyle[] = ['straight', 'arched']

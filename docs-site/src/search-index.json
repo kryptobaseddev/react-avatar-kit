@@ -1,0 +1,443 @@
+{
+  "generatedFrom": "src",
+  "entries": [
+    {
+      "kind": "export",
+      "title": "Avatar",
+      "value": "Avatar",
+      "text": "Avatar public export runtime API"
+    },
+    {
+      "kind": "export",
+      "title": "createAvatar",
+      "value": "createAvatar",
+      "text": "createAvatar public export runtime API"
+    },
+    {
+      "kind": "export",
+      "title": "palettes",
+      "value": "palettes",
+      "text": "palettes public export runtime API"
+    },
+    {
+      "kind": "type",
+      "title": "AvatarColor",
+      "value": "AvatarColor",
+      "text": "AvatarColor public type export"
+    },
+    {
+      "kind": "type",
+      "title": "AvatarConfig",
+      "value": "AvatarConfig",
+      "text": "AvatarConfig public type export"
+    },
+    {
+      "kind": "type",
+      "title": "AvatarGradient",
+      "value": "AvatarGradient",
+      "text": "AvatarGradient public type export"
+    },
+    {
+      "kind": "type",
+      "title": "AvatarOptions",
+      "value": "AvatarOptions",
+      "text": "AvatarOptions public type export"
+    },
+    {
+      "kind": "type",
+      "title": "AvatarProps",
+      "value": "AvatarProps",
+      "text": "AvatarProps public type export"
+    },
+    {
+      "kind": "type",
+      "title": "BrowStyle",
+      "value": "BrowStyle",
+      "text": "BrowStyle public type export"
+    },
+    {
+      "kind": "type",
+      "title": "EarSize",
+      "value": "EarSize",
+      "text": "EarSize public type export"
+    },
+    {
+      "kind": "type",
+      "title": "Earring",
+      "value": "Earring",
+      "text": "Earring public type export"
+    },
+    {
+      "kind": "type",
+      "title": "EyeStyle",
+      "value": "EyeStyle",
+      "text": "EyeStyle public type export"
+    },
+    {
+      "kind": "type",
+      "title": "FacialHair",
+      "value": "FacialHair",
+      "text": "FacialHair public type export"
+    },
+    {
+      "kind": "type",
+      "title": "GlassesStyle",
+      "value": "GlassesStyle",
+      "text": "GlassesStyle public type export"
+    },
+    {
+      "kind": "type",
+      "title": "HairStyle",
+      "value": "HairStyle",
+      "text": "HairStyle public type export"
+    },
+    {
+      "kind": "type",
+      "title": "HatStyle",
+      "value": "HatStyle",
+      "text": "HatStyle public type export"
+    },
+    {
+      "kind": "type",
+      "title": "Headphones",
+      "value": "Headphones",
+      "text": "Headphones public type export"
+    },
+    {
+      "kind": "type",
+      "title": "MouthStyle",
+      "value": "MouthStyle",
+      "text": "MouthStyle public type export"
+    },
+    {
+      "kind": "type",
+      "title": "NoseStyle",
+      "value": "NoseStyle",
+      "text": "NoseStyle public type export"
+    },
+    {
+      "kind": "type",
+      "title": "Palette",
+      "value": "Palette",
+      "text": "Palette public type export"
+    },
+    {
+      "kind": "type",
+      "title": "PaletteName",
+      "value": "PaletteName",
+      "text": "PaletteName public type export"
+    },
+    {
+      "kind": "type",
+      "title": "Shape",
+      "value": "Shape",
+      "text": "Shape public type export"
+    },
+    {
+      "kind": "type",
+      "title": "ShirtStyle",
+      "value": "ShirtStyle",
+      "text": "ShirtStyle public type export"
+    },
+    {
+      "kind": "part",
+      "title": "HairStyle: short",
+      "value": "short",
+      "text": "short HairStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "HairStyle: thick",
+      "value": "thick",
+      "text": "thick HairStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "HairStyle: mohawk",
+      "value": "mohawk",
+      "text": "mohawk HairStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "HairStyle: long",
+      "value": "long",
+      "text": "long HairStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "HairStyle: bob",
+      "value": "bob",
+      "text": "bob HairStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "HairStyle: buzz",
+      "value": "buzz",
+      "text": "buzz HairStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "HairStyle: none",
+      "value": "none",
+      "text": "none HairStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "FacialHair: none",
+      "value": "none",
+      "text": "none FacialHair part option"
+    },
+    {
+      "kind": "part",
+      "title": "FacialHair: moustache",
+      "value": "moustache",
+      "text": "moustache FacialHair part option"
+    },
+    {
+      "kind": "part",
+      "title": "FacialHair: handlebar",
+      "value": "handlebar",
+      "text": "handlebar FacialHair part option"
+    },
+    {
+      "kind": "part",
+      "title": "FacialHair: beard",
+      "value": "beard",
+      "text": "beard FacialHair part option"
+    },
+    {
+      "kind": "part",
+      "title": "FacialHair: goatee",
+      "value": "goatee",
+      "text": "goatee FacialHair part option"
+    },
+    {
+      "kind": "part",
+      "title": "FacialHair: stubble",
+      "value": "stubble",
+      "text": "stubble FacialHair part option"
+    },
+    {
+      "kind": "part",
+      "title": "Earring: none",
+      "value": "none",
+      "text": "none Earring part option"
+    },
+    {
+      "kind": "part",
+      "title": "Earring: stud",
+      "value": "stud",
+      "text": "stud Earring part option"
+    },
+    {
+      "kind": "part",
+      "title": "Earring: hoop",
+      "value": "hoop",
+      "text": "hoop Earring part option"
+    },
+    {
+      "kind": "part",
+      "title": "Headphones: none",
+      "value": "none",
+      "text": "none Headphones part option"
+    },
+    {
+      "kind": "part",
+      "title": "Headphones: over-ear",
+      "value": "over-ear",
+      "text": "over-ear Headphones part option"
+    },
+    {
+      "kind": "part",
+      "title": "HatStyle: none",
+      "value": "none",
+      "text": "none HatStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "HatStyle: beanie",
+      "value": "beanie",
+      "text": "beanie HatStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "HatStyle: turban",
+      "value": "turban",
+      "text": "turban HatStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "EyeStyle: round",
+      "value": "round",
+      "text": "round EyeStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "EyeStyle: oval",
+      "value": "oval",
+      "text": "oval EyeStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "EyeStyle: smile",
+      "value": "smile",
+      "text": "smile EyeStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "BrowStyle: straight",
+      "value": "straight",
+      "text": "straight BrowStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "BrowStyle: arched",
+      "value": "arched",
+      "text": "arched BrowStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "GlassesStyle: none",
+      "value": "none",
+      "text": "none GlassesStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "GlassesStyle: round",
+      "value": "round",
+      "text": "round GlassesStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "GlassesStyle: square",
+      "value": "square",
+      "text": "square GlassesStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "NoseStyle: short",
+      "value": "short",
+      "text": "short NoseStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "NoseStyle: round",
+      "value": "round",
+      "text": "round NoseStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "NoseStyle: long",
+      "value": "long",
+      "text": "long NoseStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "MouthStyle: smile",
+      "value": "smile",
+      "text": "smile MouthStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "MouthStyle: laugh",
+      "value": "laugh",
+      "text": "laugh MouthStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "MouthStyle: peace",
+      "value": "peace",
+      "text": "peace MouthStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "ShirtStyle: tee",
+      "value": "tee",
+      "text": "tee ShirtStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "ShirtStyle: hoodie",
+      "value": "hoodie",
+      "text": "hoodie ShirtStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "ShirtStyle: polo",
+      "value": "polo",
+      "text": "polo ShirtStyle part option"
+    },
+    {
+      "kind": "part",
+      "title": "EarSize: small",
+      "value": "small",
+      "text": "small EarSize part option"
+    },
+    {
+      "kind": "part",
+      "title": "EarSize: big",
+      "value": "big",
+      "text": "big EarSize part option"
+    },
+    {
+      "kind": "part",
+      "title": "Shape: circle",
+      "value": "circle",
+      "text": "circle Shape part option"
+    },
+    {
+      "kind": "part",
+      "title": "Shape: rounded",
+      "value": "rounded",
+      "text": "rounded Shape part option"
+    },
+    {
+      "kind": "part",
+      "title": "Shape: square",
+      "value": "square",
+      "text": "square Shape part option"
+    },
+    {
+      "kind": "part",
+      "title": "Shape: none",
+      "value": "none",
+      "text": "none Shape part option"
+    },
+    {
+      "kind": "palette",
+      "title": "palette: default",
+      "value": "default",
+      "text": "default palette colours"
+    },
+    {
+      "kind": "palette",
+      "title": "palette: pastel",
+      "value": "pastel",
+      "text": "pastel palette colours"
+    },
+    {
+      "kind": "palette",
+      "title": "palette: vivid",
+      "value": "vivid",
+      "text": "vivid palette colours"
+    },
+    {
+      "kind": "palette",
+      "title": "palette: earth",
+      "value": "earth",
+      "text": "earth palette colours"
+    },
+    {
+      "kind": "palette",
+      "title": "palette: neon",
+      "value": "neon",
+      "text": "neon palette colours"
+    },
+    {
+      "kind": "palette",
+      "title": "palette: mono",
+      "value": "mono",
+      "text": "mono palette colours"
+    }
+  ]
+}

@@ -9,6 +9,8 @@
     "includes": [
       "src/**",
       "site/**",
+      "docs-site/**",
+      "examples/**",
       "test/**",
       "e2e/**",
       "scripts/**",
@@ -17,7 +19,12 @@
       "*.md",
       "!dist",
       "!site/dist",
+      "!docs-site/dist",
       "!site/node_modules",
+      "!docs-site/node_modules",
+      "!examples/**/node_modules",
+      "!examples/**/.next",
+      "!examples/**/dist",
       "!test-results",
       "!playwright-report",
       "!test/fixtures"

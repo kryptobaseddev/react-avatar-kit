@@ -30,11 +30,13 @@ for (let attempt = 1; attempt <= ATTEMPTS; attempt += 1) {
       response.ok && html.includes('id="root"') && assets.every((asset) => html.includes(asset))
 
     if (matches) {
-      for (const asset of assets) {
+      for (const asset of [...assets, ...docsAssets]) {
         const assetResponse = await fetch(`https://kryptobaseddev.github.io${asset}`)
         if (!assetResponse.ok) throw new Error(`${asset} responded ${assetResponse.status}`)
       }
-      console.log(`ok pages: ${URL} serves ${assets.length} current asset(s)`)
+      console.log(
+        `ok pages: ${URL} and /docs serve ${assets.length + docsAssets.length} current asset(s)`,
+      )
       process.exit(0)
     }
     console.log(

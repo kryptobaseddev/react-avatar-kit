@@ -11,7 +11,7 @@ export default defineConfig({
   target: 'es2022',
   dts: true,
   clean: true,
-  sourcemap: true,
+  sourcemap: false,
   publint: true,
   unused: false,
   external: ['react', 'react/jsx-runtime', 'react-dom', 'react-dom/server'],
