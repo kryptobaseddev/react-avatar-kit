@@ -4,6 +4,14 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.0.1 — 2026-10-17
+
+### Changed
+
+- Publishing now uses npm trusted publishing over OIDC from GitHub Actions, with
+  provenance and no long-lived `NPM_TOKEN` secret.
+- README documents both release routes and the verified framework integrations.
+
 ## 1.0.0 — 2026-10-17
 
 First release of react-avatar-kit, a ground-up rewrite of the avatar system for React 18
