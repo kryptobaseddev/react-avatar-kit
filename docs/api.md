@@ -35,7 +35,6 @@ and in a plain React 18/19 client tree.
 
 ```ts
 interface AvatarProps extends AvatarOptions {
-  seed?: string
   config?: AvatarConfig
   size?: number | string
   alt?: string
@@ -201,33 +200,36 @@ const markup = avatarToSvg('ada@example.com', { size: 512, alt: 'Ada' })
 
 ## Public exports
 
-`src/index.ts` is the entire public surface:
+`src/index.ts` is the entire public surface of the component entry point:
 
 ```ts
 export { Avatar } from './react/avatar'
 export { createAvatar } from './core/create-avatar'
 export { palettes } from './core/palettes'
 
+export type { AvatarProps } from './react/avatar'
 export type {
-  AvatarProps,
-  AvatarOptions,
-  EarSize,
-  AvatarConfig,
   AvatarColor,
+  AvatarConfig,
   AvatarGradient,
+  AvatarOptions,
+  BrowStyle,
+  EarSize,
+  EyeStyle,
+  GlassesStyle,
+  HairStyle,
+  HatStyle,
+  MouthStyle,
+  NoseStyle,
   Palette,
   PaletteName,
   Shape,
-  HairStyle,
-  HatStyle,
-  EyeStyle,
-  BrowStyle,
-  GlassesStyle,
-  NoseStyle,
-  MouthStyle,
   ShirtStyle,
 } from './core/types'
 ```
+
+`avatarToSvg` is the fourth public runtime function and lives on the
+`react-avatar-kit/server` subpath.
 
 Type signatures:
 
