@@ -56,6 +56,35 @@ if (entryGzip > BUDGET_ENTRY_GZIP) {
   console.log(`ok size: client entry graph ${(entryGzip / 1024).toFixed(1)} kB gzip (budget 30 kB)`)
 }
 
+function runtimeGraph(entry) {
+  const seen = new Set()
+  const queue = [entry]
+  while (queue.length > 0) {
+    const file = queue.pop()
+    if (seen.has(file)) continue
+    seen.add(file)
+    const source = readFileSync(join('dist', file), 'utf8')
+    for (const match of source.matchAll(/from\s*["'](\.\/[^"']+)["']/g)) {
+      const spec = match[1].replace('./', '')
+      if (spec.endsWith('.js')) queue.push(spec)
+    }
+  }
+  return [...seen]
+}
+
+const coreGraph = runtimeGraph('core.js')
+const coreGzip = coreGraph.reduce((total, file) => total + gzipSize(join('dist', file)), 0)
+const BUDGET_CORE_GZIP = 10 * 1024
+if (coreGzip > BUDGET_CORE_GZIP) {
+  failures.push(`/core graph is ${(coreGzip / 1024).toFixed(1)} kB gzip, budget is 10 kB`)
+}
+for (const file of coreGraph) {
+  const source = readFileSync(join('dist', file), 'utf8')
+  if (source.includes('viewBox') || source.includes('d="M')) {
+    failures.push(`/core graph includes illustration markup in ${file}`)
+  }
+}
+
 for (const file of esmFiles) {
   const source = readFileSync(join('dist', file), 'utf8')
   if (file !== 'server.js' && /from\s*['"]react-dom/.test(source)) {
@@ -105,6 +134,10 @@ if (unpackedSize > BUDGET_UNPACKED) {
 } else {
   console.log(`ok tarball: ${files.length} files, ${(unpackedSize / 1024).toFixed(1)} kB unpacked`)
 }
+
+console.log(
+  `ok core: ${coreGraph.length} files, ${(coreGzip / 1024).toFixed(1)} kB gzip, art-free (budget 10 kB)`,
+)
 
 if (statSync('dist').isDirectory() === false) failures.push('dist is not a directory')
 
