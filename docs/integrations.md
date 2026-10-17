@@ -12,6 +12,7 @@ What has actually been run against the published artifact, and what that implies
 | **React 18/19 client render** | `jsdom` + `createRoot` + `flushSync` mounts `<Avatar seed size alt />` in a throwaway project per React version. | Renders the SVG with the expected viewBox, width and accessible name. |
 | **react-dom/server (SSR)** | `scripts/check-ssr.mjs` renders through `react-dom/server` and loads the package under the `react-server` export condition. | No hooks, no `react-dom` in the client entry. |
 | **React 18 and 19 consumers** | `scripts/check-consumer.mjs` installs the packed tarball into throwaway projects and renders + typechecks. | Renders identically; declarations resolve under `bundler`, `node16`, and strict `skipLibCheck: false`. |
+| **Node 18, 20 and 24** | Ran the SSR/RSC check and entry-point imports on `node@18.20.8`, `node@20.20.2` and Node 24. | ESM and CJS entries resolve; SSR markup is identical on every version. |
 | **CommonJS** | `scripts/check-api.mjs` requires every entry point. | `react-avatar-kit`, `/core` and `/server` all resolve. |
 
 ## What makes it portable
