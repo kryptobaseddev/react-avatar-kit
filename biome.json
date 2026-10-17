@@ -27,7 +27,8 @@
       "!examples/**/dist",
       "!test-results",
       "!playwright-report",
-      "!test/fixtures"
+      "!test/fixtures",
+      "!examples/**/next-env.d.ts"
     ]
   },
   "formatter": {
