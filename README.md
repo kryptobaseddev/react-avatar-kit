@@ -178,13 +178,25 @@ npm run check:all         # every gate, in order
 npm publish --access public
 ```
 
-**Route B — from CI (with provenance)**
+**Route B — from CI with OIDC (no token)**
 
-1. Create an npm granular access token with publish rights for `react-avatar-kit`
-   (or configure trusted publishing for `kryptobaseddev/react-avatar-kit`).
-2. Add it as the `NPM_TOKEN` repository secret (Settings → Secrets → Actions).
-3. `npm version <patch|minor|major> && git push --follow-tags`.
-   `publish.yml` builds, checks the tarball, and publishes with provenance.
+1. Register the trusted publisher once (either command or npmjs.com → package → Settings →
+   Trusted Publisher → GitHub):
+
+   ```sh
+   npm trust github react-avatar-kit --file publish.yml --repo kryptobaseddev/react-avatar-kit --allow-publish
+   ```
+
+2. Push a version tag:
+
+   ```sh
+   npm version <patch|minor|major> && git push --follow-tags
+   ```
+
+`publish.yml` then typechecks, tests, builds, checks the API/package/SSR, and runs
+`npm publish --provenance --access public`. npm exchanges the workflow's OIDC token for a
+short-lived credential, so there is no `NPM_TOKEN` secret to rotate. Provenance is attached
+to the release.
 
 The playground deploys from `main` through `pages.yml`; Pages must be set to
 **Source: GitHub Actions** (already configured for this repository).

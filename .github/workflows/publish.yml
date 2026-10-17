@@ -13,7 +13,6 @@ jobs:
   npm:
     name: Publish to npm
     runs-on: ubuntu-latest
-    environment: npm
     steps:
       - uses: actions/checkout@v4
 
@@ -31,9 +30,8 @@ jobs:
       - run: npm run check:package
       - run: npm run check:ssr
 
-      # Prefers npm trusted publishing (OIDC, no secret). If the package is not yet
-      # configured for trusted publishing, add an NPM_TOKEN repository secret instead.
-      - name: Publish
+      # Trusted publishing: npm exchanges this workflow's OIDC token for a short-lived
+      # publish credential. No NPM_TOKEN secret is involved. The trusted publisher on
+      # npmjs.com must name this repository and this workflow file (`publish.yml`).
+      - name: Publish with provenance
         run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
