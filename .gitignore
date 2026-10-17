@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+site/dist/
+*.tsbuildinfo
+
+# Test output
+coverage/
+test-results/
+playwright-report/
+blob-report/
+.playwright/
+
+# Editor and OS
+.DS_Store
+.idea/
+.vscode/
+*.log
+npm-debug.log*
+
+# Agent and goal state
+.opencode/
+
+# Local environment
+.env
+.env.*
+!.env.example

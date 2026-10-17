@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Lint and format
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Unit, golden and accessibility tests
+        run: npm test
+
+      - name: Build library
+        run: npm run build
+
+      - name: Public API surface
+        run: npm run check:api
+
+      - name: Package contents and size budget
+        run: npm run check:package
+
+      - name: Server rendering and React Server Component safety
+        run: npm run check:ssr
+
+      - name: Consumer smoke test (React 18 and 19)
+        run: npm run check:consumer
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Playground end-to-end
+        run: npm run test:e2e
+
+      - name: Visual regression matrix
+        run: npm run test:visual
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            playwright-report
+            test-results
+          retention-days: 7

@@ -1,0 +1,882 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "input": "ada",
+      "config": {
+        "seed": "ada",
+        "palette": "default",
+        "background": {
+          "from": "#23262E",
+          "to": "#5B5BD6"
+        },
+        "skin": "#C9825A",
+        "hair": "bob",
+        "hairColor": "#4F6BED",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#E85D75",
+        "ears": "small",
+        "eyes": "round",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "long",
+        "mouth": "smile",
+        "shirt": "tee",
+        "shirtColor": "#E9A23B",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "grace",
+      "config": {
+        "seed": "grace",
+        "palette": "default",
+        "background": "#F6E7A6",
+        "skin": "#F6D2B8",
+        "hair": "none",
+        "hairColor": "#E85D75",
+        "highlight": false,
+        "hat": "beanie",
+        "hatColor": "#4F6BED",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "round",
+        "nose": "short",
+        "mouth": "laugh",
+        "shirt": "polo",
+        "shirtColor": "#B45BC8",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "linus",
+      "config": {
+        "seed": "linus",
+        "palette": "default",
+        "background": {
+          "from": "#7C5CFF",
+          "to": "#FF7A8A"
+        },
+        "skin": "#F6D2B8",
+        "hair": "short",
+        "hairColor": "#6B4128",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#2FA36B",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "short",
+        "mouth": "laugh",
+        "shirt": "tee",
+        "shirtColor": "#23262E",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "margaret",
+      "config": {
+        "seed": "margaret",
+        "palette": "default",
+        "background": "#D8F0E6",
+        "skin": "#F6D2B8",
+        "hair": "bob",
+        "hairColor": "#3B2A20",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#E9A23B",
+        "ears": "big",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "square",
+        "nose": "short",
+        "mouth": "smile",
+        "shirt": "tee",
+        "shirtColor": "#B45BC8",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "alan",
+      "config": {
+        "seed": "alan",
+        "palette": "default",
+        "background": "#E9EDF4",
+        "skin": "#5F3A2C",
+        "hair": "none",
+        "hairColor": "#6B4128",
+        "highlight": true,
+        "hat": "beanie",
+        "hatColor": "#F2F5FA",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "arched",
+        "glasses": "none",
+        "nose": "short",
+        "mouth": "peace",
+        "shirt": "polo",
+        "shirtColor": "#E9A23B",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "edsger",
+      "config": {
+        "seed": "edsger",
+        "palette": "default",
+        "background": "#5B5BD6",
+        "skin": "#EFBE9C",
+        "hair": "thick",
+        "hairColor": "#B9BFCB",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#F2F5FA",
+        "ears": "big",
+        "eyes": "round",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "short",
+        "mouth": "laugh",
+        "shirt": "polo",
+        "shirtColor": "#E9A23B",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "barbara",
+      "config": {
+        "seed": "barbara",
+        "palette": "default",
+        "background": "#F6E7A6",
+        "skin": "#EFBE9C",
+        "hair": "none",
+        "hairColor": "#B9BFCB",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#F2F5FA",
+        "ears": "big",
+        "eyes": "oval",
+        "brows": "arched",
+        "glasses": "none",
+        "nose": "round",
+        "mouth": "smile",
+        "shirt": "polo",
+        "shirtColor": "#E85D75",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "ken",
+      "config": {
+        "seed": "ken",
+        "palette": "default",
+        "background": "#FBE0D5",
+        "skin": "#EFBE9C",
+        "hair": "long",
+        "hairColor": "#14161C",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#F2F5FA",
+        "ears": "small",
+        "eyes": "round",
+        "brows": "straight",
+        "glasses": "square",
+        "nose": "short",
+        "mouth": "peace",
+        "shirt": "polo",
+        "shirtColor": "#E85D75",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "dennis",
+      "config": {
+        "seed": "dennis",
+        "palette": "default",
+        "background": {
+          "from": "#4F6BED",
+          "to": "#7CE0D3"
+        },
+        "skin": "#A86443",
+        "hair": "bob",
+        "hairColor": "#3B2A20",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#F2F5FA",
+        "ears": "small",
+        "eyes": "round",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "long",
+        "mouth": "laugh",
+        "shirt": "polo",
+        "shirtColor": "#E9A23B",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "donald",
+      "config": {
+        "seed": "donald",
+        "palette": "default",
+        "background": "#F7DDE6",
+        "skin": "#5F3A2C",
+        "hair": "short",
+        "hairColor": "#CD8B4A",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#E85D75",
+        "ears": "small",
+        "eyes": "round",
+        "brows": "arched",
+        "glasses": "round",
+        "nose": "short",
+        "mouth": "smile",
+        "shirt": "tee",
+        "shirtColor": "#B45BC8",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "radia",
+      "config": {
+        "seed": "radia",
+        "palette": "default",
+        "background": "#5B5BD6",
+        "skin": "#EFBE9C",
+        "hair": "long",
+        "hairColor": "#F2F5FA",
+        "highlight": true,
+        "hat": "none",
+        "hatColor": "#2FA36B",
+        "ears": "big",
+        "eyes": "round",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "short",
+        "mouth": "peace",
+        "shirt": "tee",
+        "shirtColor": "#E9A23B",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "vint",
+      "config": {
+        "seed": "vint",
+        "palette": "default",
+        "background": {
+          "from": "#FFB86B",
+          "to": "#FF5F8F"
+        },
+        "skin": "#A86443",
+        "hair": "thick",
+        "hairColor": "#CD8B4A",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#8A5230",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "square",
+        "nose": "round",
+        "mouth": "laugh",
+        "shirt": "tee",
+        "shirtColor": "#5B5BD6",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "tim",
+      "config": {
+        "seed": "tim",
+        "palette": "default",
+        "background": "#F7DDE6",
+        "skin": "#82503A",
+        "hair": "thick",
+        "hairColor": "#6B4128",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#F2F5FA",
+        "ears": "small",
+        "eyes": "smile",
+        "brows": "straight",
+        "glasses": "round",
+        "nose": "round",
+        "mouth": "laugh",
+        "shirt": "tee",
+        "shirtColor": "#2FA36B",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "bjarne",
+      "config": {
+        "seed": "bjarne",
+        "palette": "default",
+        "background": "#D8F0E6",
+        "skin": "#C9825A",
+        "hair": "long",
+        "hairColor": "#CD8B4A",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#2FA36B",
+        "ears": "big",
+        "eyes": "round",
+        "brows": "arched",
+        "glasses": "none",
+        "nose": "long",
+        "mouth": "laugh",
+        "shirt": "tee",
+        "shirtColor": "#B45BC8",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "james",
+      "config": {
+        "seed": "james",
+        "palette": "default",
+        "background": "#5B5BD6",
+        "skin": "#EFBE9C",
+        "hair": "none",
+        "hairColor": "#E8C27C",
+        "highlight": false,
+        "hat": "turban",
+        "hatColor": "#F2F5FA",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "short",
+        "mouth": "smile",
+        "shirt": "tee",
+        "shirtColor": "#E9A23B",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "guido",
+      "config": {
+        "seed": "guido",
+        "palette": "default",
+        "background": "#D7EEF7",
+        "skin": "#5F3A2C",
+        "hair": "mohawk",
+        "hairColor": "#CD8B4A",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#F2F5FA",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "arched",
+        "glasses": "none",
+        "nose": "round",
+        "mouth": "laugh",
+        "shirt": "tee",
+        "shirtColor": "#B45BC8",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "yukihiro",
+      "config": {
+        "seed": "yukihiro",
+        "palette": "default",
+        "background": {
+          "from": "#4F6BED",
+          "to": "#7CE0D3"
+        },
+        "skin": "#5F3A2C",
+        "hair": "none",
+        "hairColor": "#3B2A20",
+        "highlight": true,
+        "hat": "beanie",
+        "hatColor": "#F2F5FA",
+        "ears": "big",
+        "eyes": "round",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "round",
+        "mouth": "smile",
+        "shirt": "tee",
+        "shirtColor": "#E9A23B",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "brendan",
+      "config": {
+        "seed": "brendan",
+        "palette": "default",
+        "background": "#E7E1FB",
+        "skin": "#EFBE9C",
+        "hair": "bob",
+        "hairColor": "#B9BFCB",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#F2F5FA",
+        "ears": "small",
+        "eyes": "smile",
+        "brows": "arched",
+        "glasses": "round",
+        "nose": "short",
+        "mouth": "peace",
+        "shirt": "polo",
+        "shirtColor": "#E85D75",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "sophie",
+      "config": {
+        "seed": "sophie",
+        "palette": "default",
+        "background": "#5B5BD6",
+        "skin": "#A86443",
+        "hair": "none",
+        "hairColor": "#E8C27C",
+        "highlight": true,
+        "hat": "beanie",
+        "hatColor": "#E9A23B",
+        "ears": "big",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "square",
+        "nose": "long",
+        "mouth": "peace",
+        "shirt": "polo",
+        "shirtColor": "#F2F5FA",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "hannah",
+      "config": {
+        "seed": "hannah",
+        "palette": "default",
+        "background": "#E9EDF4",
+        "skin": "#F6D2B8",
+        "hair": "long",
+        "hairColor": "#4F6BED",
+        "highlight": true,
+        "hat": "none",
+        "hatColor": "#14161C",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "arched",
+        "glasses": "none",
+        "nose": "round",
+        "mouth": "smile",
+        "shirt": "hoodie",
+        "shirtColor": "#E9A23B",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "keaton",
+      "config": {
+        "seed": "keaton",
+        "palette": "default",
+        "background": "#F7DDE6",
+        "skin": "#C9825A",
+        "hair": "mohawk",
+        "hairColor": "#14161C",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#8A5230",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "round",
+        "mouth": "laugh",
+        "shirt": "tee",
+        "shirtColor": "#23262E",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "kryptobaseddev",
+      "config": {
+        "seed": "kryptobaseddev",
+        "palette": "default",
+        "background": "#E7E1FB",
+        "skin": "#EFBE9C",
+        "hair": "bob",
+        "hairColor": "#14161C",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#2FA36B",
+        "ears": "small",
+        "eyes": "round",
+        "brows": "straight",
+        "glasses": "square",
+        "nose": "short",
+        "mouth": "peace",
+        "shirt": "polo",
+        "shirtColor": "#E9A23B",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "react-avatar-kit",
+      "config": {
+        "seed": "react-avatar-kit",
+        "palette": "default",
+        "background": "#FBE0D5",
+        "skin": "#82503A",
+        "hair": "short",
+        "hairColor": "#E8C27C",
+        "highlight": true,
+        "hat": "none",
+        "hatColor": "#4F6BED",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "round",
+        "mouth": "laugh",
+        "shirt": "tee",
+        "shirtColor": "#E85D75",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "user@example.com",
+      "config": {
+        "seed": "user@example.com",
+        "palette": "default",
+        "background": "#F7DDE6",
+        "skin": "#82503A",
+        "hair": "bob",
+        "hairColor": "#14161C",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#F2F5FA",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "short",
+        "mouth": "smile",
+        "shirt": "tee",
+        "shirtColor": "#B45BC8",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": " space ",
+      "config": {
+        "seed": "space",
+        "palette": "default",
+        "background": {
+          "from": "#2FA36B",
+          "to": "#8BD5FF"
+        },
+        "skin": "#82503A",
+        "hair": "none",
+        "hairColor": "#9C5A2E",
+        "highlight": false,
+        "hat": "turban",
+        "hatColor": "#F2F5FA",
+        "ears": "big",
+        "eyes": "round",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "long",
+        "mouth": "smile",
+        "shirt": "tee",
+        "shirtColor": "#23262E",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "UPPER",
+      "config": {
+        "seed": "UPPER",
+        "palette": "default",
+        "background": "#5B5BD6",
+        "skin": "#EFBE9C",
+        "hair": "long",
+        "hairColor": "#4F6BED",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#E85D75",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "round",
+        "mouth": "smile",
+        "shirt": "polo",
+        "shirtColor": "#E9A23B",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "üñïçø∂é",
+      "config": {
+        "seed": "üñïçø∂é",
+        "palette": "default",
+        "background": "#FBE0D5",
+        "skin": "#82503A",
+        "hair": "short",
+        "hairColor": "#F2F5FA",
+        "highlight": true,
+        "hat": "none",
+        "hatColor": "#8A5230",
+        "ears": "small",
+        "eyes": "round",
+        "brows": "arched",
+        "glasses": "none",
+        "nose": "round",
+        "mouth": "laugh",
+        "shirt": "hoodie",
+        "shirtColor": "#B45BC8",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "0",
+      "config": {
+        "seed": "0",
+        "palette": "default",
+        "background": "#D7EEF7",
+        "skin": "#82503A",
+        "hair": "short",
+        "hairColor": "#CD8B4A",
+        "highlight": true,
+        "hat": "none",
+        "hatColor": "#F2F5FA",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "short",
+        "mouth": "smile",
+        "shirt": "tee",
+        "shirtColor": "#3AA9C4",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "config": {
+        "seed": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "palette": "default",
+        "background": {
+          "from": "#FFB86B",
+          "to": "#FF5F8F"
+        },
+        "skin": "#A86443",
+        "hair": "none",
+        "hairColor": "#E85D75",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#8A5230",
+        "ears": "big",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "square",
+        "nose": "round",
+        "mouth": "smile",
+        "shirt": "polo",
+        "shirtColor": "#5B5BD6",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": "🔥",
+      "config": {
+        "seed": "🔥",
+        "palette": "default",
+        "background": "#E9EDF4",
+        "skin": "#5F3A2C",
+        "hair": "short",
+        "hairColor": "#CD8B4A",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#8A5230",
+        "ears": "small",
+        "eyes": "round",
+        "brows": "straight",
+        "glasses": "square",
+        "nose": "short",
+        "mouth": "peace",
+        "shirt": "tee",
+        "shirtColor": "#2FA36B",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": {
+        "seed": "keaton",
+        "palette": "default"
+      },
+      "config": {
+        "seed": "keaton",
+        "palette": "default",
+        "background": "#F7DDE6",
+        "skin": "#C9825A",
+        "hair": "mohawk",
+        "hairColor": "#14161C",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#8A5230",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "round",
+        "mouth": "laugh",
+        "shirt": "tee",
+        "shirtColor": "#23262E",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": {
+        "seed": "keaton",
+        "palette": "pastel"
+      },
+      "config": {
+        "seed": "keaton",
+        "palette": "pastel",
+        "background": "#FBF3DE",
+        "skin": "#EBC0AB",
+        "hair": "mohawk",
+        "hairColor": "#7C6A5E",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#C9D7F2",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "round",
+        "mouth": "laugh",
+        "shirt": "tee",
+        "shirtColor": "#D6C9F2",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": {
+        "seed": "keaton",
+        "palette": "vivid"
+      },
+      "config": {
+        "seed": "keaton",
+        "palette": "vivid",
+        "background": "#FED7AA",
+        "skin": "#CF7746",
+        "hair": "mohawk",
+        "hairColor": "#12131A",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#0891B2",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "round",
+        "mouth": "laugh",
+        "shirt": "tee",
+        "shirtColor": "#111827",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": {
+        "seed": "keaton",
+        "palette": "mono"
+      },
+      "config": {
+        "seed": "keaton",
+        "palette": "mono",
+        "background": "#2B2B2B",
+        "skin": "#A6A6A6",
+        "hair": "mohawk",
+        "hairColor": "#111111",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#737373",
+        "ears": "small",
+        "eyes": "oval",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "round",
+        "mouth": "laugh",
+        "shirt": "tee",
+        "shirtColor": "#F2F2F2",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": {
+        "seed": "ada",
+        "hair": "mohawk",
+        "eyes": "smile",
+        "background": "#112233"
+      },
+      "config": {
+        "seed": "ada",
+        "palette": "default",
+        "background": "#112233",
+        "skin": "#C9825A",
+        "hair": "mohawk",
+        "hairColor": "#4F6BED",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#E85D75",
+        "ears": "small",
+        "eyes": "smile",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "long",
+        "mouth": "smile",
+        "shirt": "tee",
+        "shirtColor": "#E9A23B",
+        "shape": "circle"
+      }
+    },
+    {
+      "input": {
+        "seed": "ada",
+        "background": {
+          "from": "#ff0000",
+          "to": "#0000ff",
+          "angle": 90
+        }
+      },
+      "config": {
+        "seed": "ada",
+        "palette": "default",
+        "background": {
+          "from": "#ff0000",
+          "to": "#0000ff",
+          "angle": 90
+        },
+        "skin": "#C9825A",
+        "hair": "bob",
+        "hairColor": "#4F6BED",
+        "highlight": false,
+        "hat": "none",
+        "hatColor": "#E85D75",
+        "ears": "small",
+        "eyes": "round",
+        "brows": "straight",
+        "glasses": "none",
+        "nose": "long",
+        "mouth": "smile",
+        "shirt": "tee",
+        "shirtColor": "#E9A23B",
+        "shape": "circle"
+      }
+    }
+  ]
+}

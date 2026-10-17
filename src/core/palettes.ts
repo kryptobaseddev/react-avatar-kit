@@ -1,0 +1,129 @@
+import type { Palette, PaletteName } from './types'
+
+/**
+ * Colour catalogues used when generating avatars.
+ *
+ * Palettes are plain data. Editors can read them to build pickers, and any colour can
+ * be overridden per avatar through `createAvatar({ palette, hairColor, ... })`.
+ */
+export const palettes: Record<PaletteName, Palette> = {
+  default: {
+    name: 'default',
+    skins: ['#F6D2B8', '#EFBE9C', '#E0A177', '#C9825A', '#A86443', '#82503A', '#5F3A2C'],
+    hair: [
+      '#14161C',
+      '#3B2A20',
+      '#6B4128',
+      '#9C5A2E',
+      '#CD8B4A',
+      '#E8C27C',
+      '#B9BFCB',
+      '#F2F5FA',
+      '#E85D75',
+      '#4F6BED',
+    ],
+    hats: ['#14161C', '#F2F5FA', '#8A5230', '#E85D75', '#4F6BED', '#2FA36B', '#E9A23B'],
+    shirts: [
+      '#5B5BD6',
+      '#2FA36B',
+      '#E85D75',
+      '#E9A23B',
+      '#3AA9C4',
+      '#F2F5FA',
+      '#23262E',
+      '#B45BC8',
+    ],
+    backgrounds: [
+      '#DCE3F2',
+      '#D8F0E6',
+      '#FBE0D5',
+      '#F6E7A6',
+      '#E7E1FB',
+      '#D7EEF7',
+      '#F7DDE6',
+      '#E9EDF4',
+      '#2B2F3A',
+      '#5B5BD6',
+    ],
+    gradients: [
+      { from: '#7C5CFF', to: '#FF7A8A' },
+      { from: '#2FA36B', to: '#8BD5FF' },
+      { from: '#FFB86B', to: '#FF5F8F' },
+      { from: '#4F6BED', to: '#7CE0D3' },
+      { from: '#23262E', to: '#5B5BD6' },
+    ],
+    accents: ['#FFFFFF', '#F2F5FA', '#FFE8A3', '#C9F7E4', '#DCE3FF'],
+  },
+  pastel: {
+    name: 'pastel',
+    skins: ['#FBE3D6', '#F6D6C4', '#EBC0AB', '#D9A88F', '#C08F78', '#A57963'],
+    hair: ['#7C6A5E', '#9B7F6B', '#C2A48C', '#E3C9A8', '#F3D9E6', '#C9D7F2', '#A8CBB7', '#F6F1E7'],
+    hats: ['#E8C6D8', '#C9D7F2', '#A8CBB7', '#F3E2B3', '#F6F1E7', '#B9A9D6'],
+    shirts: ['#C9D7F2', '#F3D9E6', '#A8CBB7', '#F3E2B3', '#D6C9F2', '#F6F1E7'],
+    backgrounds: ['#F6F1E7', '#EEF3FB', '#F7EAF1', '#EAF5EE', '#FBF3DE', '#E9E7F7'],
+    gradients: [
+      { from: '#F7D9E3', to: '#DCE9FF' },
+      { from: '#DFF3E6', to: '#F9F2D6' },
+      { from: '#E9E1FF', to: '#FFE7D6' },
+    ],
+    accents: ['#FFFFFF', '#FFFBEF', '#F1E7FF'],
+  },
+  vivid: {
+    name: 'vivid',
+    skins: ['#F7C9A3', '#E9A06E', '#CF7746', '#A65B33', '#7E4326', '#5A301C'],
+    hair: [
+      '#12131A',
+      '#3A1F0F',
+      '#7A2E12',
+      '#C2410C',
+      '#F59E0B',
+      '#A3E635',
+      '#22D3EE',
+      '#EC4899',
+      '#8B5CF6',
+    ],
+    hats: ['#EA580C', '#0891B2', '#16A34A', '#7C3AED', '#DB2777', '#111827', '#F8FAFC'],
+    shirts: [
+      '#2563EB',
+      '#16A34A',
+      '#DC2626',
+      '#F59E0B',
+      '#7C3AED',
+      '#0891B2',
+      '#111827',
+      '#F8FAFC',
+    ],
+    backgrounds: [
+      '#FDE68A',
+      '#A7F3D0',
+      '#BFDBFE',
+      '#FBCFE8',
+      '#DDD6FE',
+      '#FED7AA',
+      '#111827',
+      '#1D4ED8',
+    ],
+    gradients: [
+      { from: '#F97316', to: '#DB2777' },
+      { from: '#06B6D4', to: '#8B5CF6' },
+      { from: '#84CC16', to: '#0EA5E9' },
+      { from: '#111827', to: '#7C3AED' },
+    ],
+    accents: ['#FFFFFF', '#FEF3C7', '#CFFAFE', '#FCE7F3'],
+  },
+  mono: {
+    name: 'mono',
+    skins: ['#F2F2F2', '#D9D9D9', '#BFBFBF', '#A6A6A6', '#8C8C8C', '#737373', '#595959'],
+    hair: ['#111111', '#333333', '#4D4D4D', '#666666', '#8C8C8C', '#B3B3B3', '#F2F2F2'],
+    hats: ['#111111', '#404040', '#737373', '#BFBFBF', '#F2F2F2'],
+    shirts: ['#1A1A1A', '#404040', '#737373', '#A6A6A6', '#D9D9D9', '#F2F2F2'],
+    backgrounds: ['#EDEDED', '#D9D9D9', '#C4C4C4', '#F7F7F7', '#2B2B2B', '#4D4D4D'],
+    gradients: [
+      { from: '#E6E6E6', to: '#BFBFBF' },
+      { from: '#4D4D4D', to: '#1A1A1A' },
+    ],
+    accents: ['#FFFFFF', '#F2F2F2', '#D9D9D9'],
+  },
+}
+
+export const paletteNames = Object.keys(palettes) as PaletteName[]
