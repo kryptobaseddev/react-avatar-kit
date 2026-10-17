@@ -155,6 +155,7 @@ npm run check:ssr     # react-server condition + react-dom/server render
 npm run check:consumer# installs the tarball under React 18 and 19
 npm run test:e2e      # Playwright: playground behaviour
 npm run test:visual   # Playwright: visual regression matrix
+npm run check:all     # every gate above, in order
 ```
 
 Visual baselines live in `e2e/matrix.visual.ts-snapshots/` and are platform-independent.

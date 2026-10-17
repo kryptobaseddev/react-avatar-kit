@@ -102,6 +102,7 @@
     "check:consumer": "node scripts/check-consumer.mjs",
     "check:repo": "node scripts/check-repo.mjs",
     "check:pages": "node scripts/check-pages.mjs",
+    "check:all": "npm run lint && npm run typecheck && npm test && npm run build && npm run check:api && npm run check:package && npm run check:ssr && npm run check:consumer && npm run test:e2e && npm run test:visual",
     "prepublishOnly": "npm run build && npm run check:package"
   },
   "devDependencies": {
