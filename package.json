@@ -106,6 +106,7 @@
     "prepublishOnly": "npm run build && npm run check:package"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
     "@biomejs/biome": "^2.5.15",
     "@playwright/test": "^1.64.1",
     "@testing-library/dom": "^10.4.2",
