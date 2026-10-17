@@ -128,6 +128,8 @@ const html = renderToStaticMarkup(<Avatar seed="ada@example.com" size={64} />)
 
 ## Requirements
 
+Framework notes (Next.js App Router, Vite, edge runtimes): [docs/integrations.md](./docs/integrations.md).
+
 - React `>=18 <20`
 - Any modern bundler. ESM and CommonJS are both first class; TypeScript declarations
   ship for both.
