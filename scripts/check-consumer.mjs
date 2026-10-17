@@ -18,6 +18,54 @@ const packed = JSON.parse(
 const tarball = join(process.cwd(), packed[0].filename)
 console.log(`packed ${packed[0].filename}`)
 
+const typeConsumer = `
+import { Avatar, createAvatar, palettes } from 'react-avatar-kit'
+import type {
+  AvatarConfig,
+  AvatarOptions,
+  AvatarProps,
+  Palette,
+  PaletteName,
+  Shape,
+} from 'react-avatar-kit'
+
+const options: AvatarOptions = { seed: 'ada', hair: 'mohawk', shape: 'rounded' }
+const config: AvatarConfig = createAvatar(options)
+const paletteName: PaletteName = 'pastel'
+const palette: Palette = palettes[paletteName]
+const shapes: Shape[] = ['circle', 'rounded', 'square', 'none']
+const props: Partial<AvatarProps> = { seed: 'ada', size: 64 }
+const element = <Avatar {...props} config={config} />
+export const used = { element, shapes, skins: palette.skins.length }
+`
+
+const tsconfigs = {
+  bundler: {
+    compilerOptions: {
+      strict: true,
+      noEmit: true,
+      jsx: 'react-jsx',
+      module: 'esnext',
+      moduleResolution: 'bundler',
+      target: 'es2022',
+      skipLibCheck: true,
+    },
+    include: ['types.tsx'],
+  },
+  node16: {
+    compilerOptions: {
+      strict: true,
+      noEmit: true,
+      jsx: 'react-jsx',
+      module: 'node16',
+      moduleResolution: 'node16',
+      target: 'es2022',
+      skipLibCheck: true,
+    },
+    include: ['types.tsx'],
+  },
+}
+
 const consumer = `
 import { createElement } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
@@ -45,6 +93,10 @@ for (const version of REACT_VERSIONS) {
     JSON.stringify({ name: `consumer-react-${version}`, private: true, type: 'module' }, null, 2),
   )
   writeFileSync(join(dir, 'render.mjs'), consumer)
+  writeFileSync(join(dir, 'types.tsx'), typeConsumer)
+  for (const [name, config] of Object.entries(tsconfigs)) {
+    writeFileSync(join(dir, `tsconfig.${name}.json`), JSON.stringify(config, null, 2))
+  }
 
   try {
     execFileSync(
@@ -56,12 +108,17 @@ for (const version of REACT_VERSIONS) {
         '--silent',
         `react@${version}`,
         `react-dom@${version}`,
+        '@types/react@19',
+        'typescript@7',
         tarball,
       ],
       { cwd: dir, stdio: 'pipe' },
     )
     const output = execFileSync('node', ['render.mjs'], { cwd: dir, encoding: 'utf8' })
-    console.log(`ok react@${version}: ${output.trim()}`)
+    for (const name of Object.keys(tsconfigs)) {
+      execFileSync('npx', ['tsc', '-p', `tsconfig.${name}.json`], { cwd: dir, stdio: 'pipe' })
+    }
+    console.log(`ok react@${version}: ${output.trim()} + types resolve (bundler, node16)`)
   } catch (error) {
     const detail = error.stdout?.toString() || error.stderr?.toString() || error.message
     failures.push(`react@${version}: ${detail.slice(0, 800)}`)
