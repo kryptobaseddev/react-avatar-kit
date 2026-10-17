@@ -132,6 +132,19 @@ describe('<Avatar />', () => {
     expect(ids(other.container)).not.toEqual(adaIds)
   })
 
+  it('centers the brows over the eyes', () => {
+    const { container } = render(<Avatar seed="ada" eyes="oval" />)
+    const partBox = (prefix: string) => {
+      const svg = [...container.querySelectorAll('svg')].find((node) =>
+        (node.getAttribute('viewBox') ?? '').startsWith(prefix),
+      )
+      const x = Number(svg?.getAttribute('x'))
+      const width = Number(svg?.getAttribute('width'))
+      return x + width / 2
+    }
+    expect(Math.abs(partBox('0 0 149') - partBox('0 0 96 48'))).toBeLessThan(0.5)
+  })
+
   it('has no duplicate ids inside one avatar', () => {
     const { container } = render(<Avatar seed="ada" hat="beanie" hair="long" glasses="round" />)
     const all = ids(container)

@@ -34,7 +34,7 @@ export const layout = {
     polo: { x: -0.4, y: 156.8, width: 196, height: 46.8 },
   },
   details: {
-    brows: { x: 6, y: 74, width: 160, height: 23.4 },
+    brows: { x: 26, y: 74, width: 160, height: 23.4 },
     eyes: {
       round: { x: 6, y: 86.6, width: 200, height: 21.6 },
       oval: { x: 6, y: 84.8, width: 200, height: 21.6 },
