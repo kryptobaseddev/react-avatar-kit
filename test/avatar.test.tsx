@@ -60,6 +60,14 @@ describe('<Avatar />', () => {
     expect(second.container.querySelector('svg')?.getAttribute('height')).toBe('2.5rem')
   })
 
+  it('falls back to a sane size for invalid values', () => {
+    const { container, unmount } = render(<Avatar seed="ada" size={Number.NaN} />)
+    expect(container.querySelector('svg')?.getAttribute('width')).toBe('64')
+    unmount()
+    const second = render(<Avatar seed="ada" size="  " />)
+    expect(second.container.querySelector('svg')?.getAttribute('width')).toBe('64')
+  })
+
   it('forwards id, className and style', () => {
     const { container } = render(
       <Avatar seed="ada" id="me" className="avatar" style={{ opacity: 0.5 }} />,

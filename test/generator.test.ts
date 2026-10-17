@@ -125,6 +125,14 @@ describe('createAvatar options', () => {
     )
   })
 
+  it('ignores a non-finite gradient angle and trims gradient colours', () => {
+    const config = createAvatar({
+      seed: 'ada',
+      background: { from: ' #112233 ', to: '#445566', angle: Number.NaN },
+    })
+    expect(config.background).toEqual({ from: '#112233', to: '#445566' })
+  })
+
   it('falls back to generated values for invalid input', () => {
     const generated = createAvatar('ada')
     const invalid = createAvatar({

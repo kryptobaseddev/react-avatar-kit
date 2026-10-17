@@ -19,6 +19,14 @@ export interface AvatarProps extends AvatarOptions {
   id?: string
 }
 
+function normalizeSize(value: number | string): number | string {
+  if (typeof value === 'number') {
+    return Number.isFinite(value) && value > 0 ? value : 64
+  }
+  const trimmed = value.trim()
+  return trimmed.length > 0 ? trimmed : 64
+}
+
 function backgroundAngle(background: AvatarConfig['background']): number {
   if (typeof background === 'string') return 45
   return background.angle ?? 45
@@ -54,7 +62,7 @@ export function Avatar(props: AvatarProps): ReactElement {
   const uid = `ark-${stableId(JSON.stringify(resolved))}`
   const clipId = `${uid}-shape`
   const gradientId = `${uid}-bg`
-  const dimension = typeof size === 'number' ? size : size
+  const dimension = normalizeSize(size)
   const clipped = resolved.shape === 'circle' || resolved.shape === 'rounded'
   const showBackground = resolved.shape !== 'none'
   const gradient =

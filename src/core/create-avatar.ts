@@ -103,6 +103,18 @@ function isGradient(value: unknown): value is AvatarGradient {
   return isColor(candidate.from) && isColor(candidate.to)
 }
 
+function normalizeBackground(value: unknown): AvatarConfig['background'] | undefined {
+  if (isGradient(value)) {
+    const from = value.from.trim()
+    const to = value.to.trim()
+    const angle =
+      typeof value.angle === 'number' && Number.isFinite(value.angle) ? value.angle : undefined
+    return angle === undefined ? { from, to } : { from, to, angle }
+  }
+  if (isColor(value)) return value.trim()
+  return undefined
+}
+
 function normalizeSeed(value: unknown): string | undefined {
   if (typeof value !== 'string') return undefined
   const trimmed = value.trim()
@@ -184,8 +196,7 @@ export function createAvatar(input?: string | AvatarOptions): AvatarConfig {
   const shirt = oneOf(provided.shirt, SHIRT_STYLES) ?? weightedPick(stream('shirt'), SHIRT_WEIGHTS)
 
   const background =
-    (isGradient(provided.background) ? provided.background : undefined) ??
-    (isColor(provided.background) ? provided.background : undefined) ??
+    normalizeBackground(provided.background) ??
     generateBackground(stream('background'), palette, [hairColor, hatColor])
 
   const backgroundReference = typeof background === 'string' ? background : background.from
