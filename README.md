@@ -3,6 +3,8 @@
 Deterministic, zero-dependency avatars for React 18 and 19. One seed in, one memorable
 avatar out — the same face on the server, in the browser, and in your database.
 
+![react-avatar-kit: one seed in, one memorable avatar out](https://raw.githubusercontent.com/kryptobaseddev/react-avatar-kit/main/docs/hero.png)
+
 [![npm version](https://img.shields.io/npm/v/react-avatar-kit.svg)](https://www.npmjs.com/package/react-avatar-kit)
 [![CI](https://github.com/kryptobaseddev/react-avatar-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/kryptobaseddev/react-avatar-kit/actions/workflows/ci.yml)
 [![license](https://img.shields.io/npm/l/react-avatar-kit.svg)](./LICENSE)

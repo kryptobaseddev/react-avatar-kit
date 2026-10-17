@@ -28,7 +28,7 @@
   "sideEffects": false,
   "files": [
     "dist",
-    "docs",
+    "docs/api.md",
     "README.md",
     "LICENSE",
     "NOTICE.md",
