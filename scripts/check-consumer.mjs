@@ -52,6 +52,18 @@ const tsconfigs = {
     },
     include: ['types.tsx'],
   },
+  strict: {
+    compilerOptions: {
+      strict: true,
+      noEmit: true,
+      jsx: 'react-jsx',
+      module: 'esnext',
+      moduleResolution: 'bundler',
+      target: 'es2022',
+      skipLibCheck: false,
+    },
+    include: ['types.tsx'],
+  },
   node16: {
     compilerOptions: {
       strict: true,
@@ -118,7 +130,7 @@ for (const version of REACT_VERSIONS) {
     for (const name of Object.keys(tsconfigs)) {
       execFileSync('npx', ['tsc', '-p', `tsconfig.${name}.json`], { cwd: dir, stdio: 'pipe' })
     }
-    console.log(`ok react@${version}: ${output.trim()} + types resolve (bundler, node16)`)
+    console.log(`ok react@${version}: ${output.trim()} + types resolve (bundler, node16, strict)`)
   } catch (error) {
     const detail = error.stdout?.toString() || error.stderr?.toString() || error.message
     failures.push(`react@${version}: ${detail.slice(0, 800)}`)
