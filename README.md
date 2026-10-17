@@ -63,6 +63,8 @@ any stable string. The same seed always renders the same avatar.
 | `avatarToSvg()` | `react-avatar-kit/server` — standalone SVG string for OG images and email. |
 
 Full signatures, every option and the migration table: **[docs/api.md](./docs/api.md)**.
+What has actually been run against Next.js, Vite, SSR and React 18/19:
+**[docs/integrations.md](./docs/integrations.md)**.
 
 ## Recipes
 
