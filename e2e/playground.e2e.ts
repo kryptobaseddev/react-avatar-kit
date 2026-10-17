@@ -84,10 +84,42 @@ test.describe('playground', () => {
       'Mouth',
       'Ears',
       'Shirt',
+      'Facial hair',
+      'Earrings',
+      'Headphones',
       'Background',
     ]) {
       await expect(page.getByRole('group', { name, exact: true })).toBeVisible()
     }
+  })
+
+  test('the editor exposes every 1.1 part and palette', async ({ page }) => {
+    await page.goto('/')
+    await page.getByTestId('seed-input').fill('one-one-parts')
+    const before = await page.locator(preview).innerHTML()
+
+    await page.getByTestId('facial-hair-beard').click()
+    await expect(page.getByTestId('facial-hair-beard')).toHaveAttribute('aria-pressed', 'true')
+    let after = await page.locator(preview).innerHTML()
+    expect(after).not.toBe(before)
+
+    await page.getByTestId('earring-hoop').click()
+    await expect(page.getByTestId('earring-hoop')).toHaveAttribute('aria-pressed', 'true')
+
+    await page.getByTestId('headphones-over-ear').click()
+    await expect(page.getByTestId('headphones-over-ear')).toHaveAttribute('aria-pressed', 'true')
+    await expect(page.getByTestId('headphone-color')).toBeVisible()
+
+    await page.getByTestId('hair-buzz').click()
+    await expect(page.getByTestId('hair-buzz')).toHaveAttribute('aria-pressed', 'true')
+
+    await page.getByTestId('palette-earth').click()
+    await expect(page.getByTestId('palette-earth')).toHaveAttribute('aria-pressed', 'true')
+    await page.getByTestId('palette-neon').click()
+    await expect(page.getByTestId('palette-neon')).toHaveAttribute('aria-pressed', 'true')
+
+    after = await page.locator(preview).innerHTML()
+    expect(after).not.toBe(before)
   })
 
   test('a gallery seed loads into the studio', async ({ page }) => {

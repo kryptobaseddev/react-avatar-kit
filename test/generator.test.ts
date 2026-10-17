@@ -24,6 +24,10 @@ const CONFIG_KEYS: (keyof AvatarConfig)[] = [
   'shirt',
   'shirtColor',
   'shape',
+  'facialHair',
+  'earring',
+  'headphones',
+  'headphoneColor',
 ]
 
 describe('createAvatar determinism', () => {
@@ -142,7 +146,7 @@ describe('createAvatar options', () => {
       eyes: 'laser',
       shape: 'blob',
       skin: '<script>alert(1)</script>',
-      palette: 'neon',
+      palette: 'sunset',
     } as unknown as AvatarOptions)
     expect(invalid.hair).toBe(generated.hair)
     expect(invalid.hat).toBe(generated.hat)
@@ -170,8 +174,8 @@ describe('createAvatar options', () => {
 describe('palettes', () => {
   const names = Object.keys(palettes) as PaletteName[]
 
-  it('exposes the four documented palettes', () => {
-    expect(names.sort()).toEqual(['default', 'mono', 'pastel', 'vivid'])
+  it('exposes the six documented palettes', () => {
+    expect(names.sort()).toEqual(['default', 'earth', 'mono', 'neon', 'pastel', 'vivid'])
   })
 
   it('only picks colours from the selected palette unless overridden', () => {
@@ -182,6 +186,58 @@ describe('palettes', () => {
       expect(palettes[palette].hair).toContain(config.hairColor)
       expect(palettes[palette].shirts).toContain(config.shirtColor)
     }
+  })
+
+  it('adds the 1.1 parts only when requested', () => {
+    const base = createAvatar('ada')
+    expect(base.facialHair).toBeUndefined()
+    expect(base.earring).toBeUndefined()
+    expect(base.headphones).toBeUndefined()
+
+    const rich = createAvatar({
+      seed: 'ada',
+      facialHair: 'beard',
+      earring: 'hoop',
+      headphones: 'over-ear',
+      headphoneColor: '#112233',
+    })
+    expect(rich.facialHair).toBe('beard')
+    expect(rich.earring).toBe('hoop')
+    expect(rich.headphones).toBe('over-ear')
+    expect(rich.headphoneColor).toBe('#112233')
+    for (const key of CONFIG_KEYS) {
+      if (
+        key === 'facialHair' ||
+        key === 'earring' ||
+        key === 'headphones' ||
+        key === 'headphoneColor'
+      )
+        continue
+      expect(rich[key]).toEqual(base[key])
+    }
+  })
+
+  it('ignores invalid 1.1 part values', () => {
+    const config = createAvatar({
+      seed: 'ada',
+      facialHair: 'muttonchops',
+      earring: 'crown',
+      headphones: 'earbuds',
+    } as unknown as AvatarOptions)
+    expect(config.facialHair).toBeUndefined()
+    expect(config.earring).toBeUndefined()
+    expect(config.headphones).toBeUndefined()
+  })
+
+  it('exposes earth and neon palettes', () => {
+    expect(palettes.earth.skins.length).toBeGreaterThan(0)
+    expect(palettes.neon.gradients.length).toBeGreaterThan(0)
+    const earth = createAvatar({ seed: 'ada', palette: 'earth' })
+    const neon = createAvatar({ seed: 'ada', palette: 'neon' })
+    expect(palettes.earth.skins).toContain(earth.skin)
+    expect(palettes.neon.skins).toContain(neon.skin)
+    expect(earth.palette).toBe('earth')
+    expect(neon.palette).toBe('neon')
   })
 
   it('keeps generated background and shirt colours apart', () => {

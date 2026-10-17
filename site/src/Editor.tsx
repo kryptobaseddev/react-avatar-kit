@@ -3,11 +3,14 @@ import {
   type AvatarKey,
   browOptions,
   earOptions,
+  earringOptions,
   eyeOptions,
+  facialHairOptions,
   glassesOptions,
   gradientColors,
   hairOptions,
   hatOptions,
+  headphoneOptions,
   mouthOptions,
   noseOptions,
   paletteOptions,
@@ -238,6 +241,38 @@ export function Editor({ config, onChange, onBackgroundMode, onReset }: EditorPr
               />
               <span>Two-tone highlight</span>
             </label>
+          </section>
+
+          <section className="editor__section">
+            <ChipGroup
+              label="Facial hair"
+              testId="facial-hair"
+              value={config.facialHair ?? 'none'}
+              options={facialHairOptions}
+              onChange={(value) => onChange('facialHair', value)}
+            />
+            <ChipGroup
+              label="Earrings"
+              testId="earring"
+              value={config.earring ?? 'none'}
+              options={earringOptions}
+              onChange={(value) => onChange('earring', value)}
+            />
+            <ChipGroup
+              label="Headphones"
+              testId="headphones"
+              value={config.headphones ?? 'none'}
+              options={headphoneOptions}
+              onChange={(value) => onChange('headphones', value)}
+            />
+            {config.headphones === 'over-ear' ? (
+              <ColorField
+                label="Headphone color"
+                testId="headphone-color"
+                value={config.headphoneColor ?? '#506AF4'}
+                onChange={(value) => onChange('headphoneColor', value)}
+              />
+            ) : null}
           </section>
         </div>
 

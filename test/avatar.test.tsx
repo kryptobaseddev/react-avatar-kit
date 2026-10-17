@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import { createAvatar } from '../src/core/create-avatar'
 import type {
+  AvatarOptions,
   BrowStyle,
   EyeStyle,
   GlassesStyle,
@@ -158,6 +159,33 @@ describe('<Avatar />', () => {
 
     const withoutHat = render(<Avatar seed="ada" hat="none" hair="mohawk" hairColor="#ff0000" />)
     expect(withoutHat.container.innerHTML).toContain('#ff0000')
+  })
+
+  it('renders every 1.1 part', () => {
+    const cases: AvatarOptions[] = [
+      { facialHair: 'moustache' },
+      { facialHair: 'handlebar' },
+      { facialHair: 'beard' },
+      { facialHair: 'goatee' },
+      { facialHair: 'stubble' },
+      { earring: 'stud' },
+      { earring: 'hoop' },
+      { headphones: 'over-ear' },
+      { hair: 'buzz' },
+      { facialHair: 'beard', earring: 'hoop', headphones: 'over-ear', palette: 'earth' },
+    ]
+    for (const options of cases) {
+      const { container, unmount } = render(<Avatar seed="ada" {...options} />)
+      expect(container.querySelector('svg')).not.toBeNull()
+      unmount()
+    }
+  })
+
+  it('uses the configured headphone colour', () => {
+    const { container } = render(
+      <Avatar seed="ada" headphones="over-ear" headphoneColor="#12ab34" />,
+    )
+    expect(container.innerHTML.toLowerCase()).toContain('#12ab34')
   })
 
   it('renders every documented part variant', () => {

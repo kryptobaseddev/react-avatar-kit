@@ -6,11 +6,14 @@ import type {
   AvatarGradient,
   AvatarOptions,
   BrowStyle,
+  Earring,
   EarSize,
   EyeStyle,
+  FacialHair,
   GlassesStyle,
   HairStyle,
   HatStyle,
+  Headphones,
   MouthStyle,
   NoseStyle,
   Palette,
@@ -23,7 +26,7 @@ const DEFAULT_SEED = 'default'
 const RANDOM_ALPHABET = '0123456789abcdefghijklmnopqrstuvwxyz'
 const CONTRAST_TARGET = 0.16
 
-const HAIR_STYLES: readonly HairStyle[] = ['short', 'thick', 'mohawk', 'long', 'bob', 'none']
+const HAIR_STYLES: readonly HairStyle[] = ['short', 'thick', 'mohawk', 'long', 'bob', 'buzz', 'none']
 const HAT_STYLES: readonly HatStyle[] = ['none', 'beanie', 'turban']
 const EYE_STYLES: readonly EyeStyle[] = ['round', 'oval', 'smile']
 const BROW_STYLES: readonly BrowStyle[] = ['straight', 'arched']
@@ -33,6 +36,16 @@ const MOUTH_STYLES: readonly MouthStyle[] = ['smile', 'laugh', 'peace']
 const SHIRT_STYLES: readonly ShirtStyle[] = ['tee', 'hoodie', 'polo']
 const EAR_SIZES: readonly EarSize[] = ['small', 'big']
 const SHAPES: readonly Shape[] = ['circle', 'rounded', 'square', 'none']
+const FACIAL_HAIRS: readonly FacialHair[] = [
+  'none',
+  'moustache',
+  'handlebar',
+  'beard',
+  'goatee',
+  'stubble',
+]
+const EARRINGS: readonly Earring[] = ['none', 'stud', 'hoop']
+const HEADPHONES: readonly Headphones[] = ['none', 'over-ear']
 
 type Weights<T> = readonly (readonly [T, number])[]
 
@@ -205,7 +218,7 @@ export function createAvatar(input?: string | AvatarOptions): AvatarConfig {
     pickColor(stream('shirt-color'), palette.shirts, [hairColor, hatColor], backgroundReference),
   )
 
-  return {
+  const config: AvatarConfig = {
     seed,
     palette: paletteName,
     background,
@@ -226,4 +239,19 @@ export function createAvatar(input?: string | AvatarOptions): AvatarConfig {
     shirtColor,
     shape: oneOf(provided.shape, SHAPES) ?? 'circle',
   }
+
+  // 1.1 parts are opt-in so existing seeded output stays byte-identical.
+  const facialHair = oneOf(provided.facialHair, FACIAL_HAIRS)
+  if (facialHair !== undefined && facialHair !== 'none') config.facialHair = facialHair
+
+  const earring = oneOf(provided.earring, EARRINGS)
+  if (earring !== undefined && earring !== 'none') config.earring = earring
+
+  const headphones = oneOf(provided.headphones, HEADPHONES)
+  if (headphones !== undefined && headphones !== 'none') {
+    config.headphones = headphones
+    config.headphoneColor = normalizeColor(provided.headphoneColor, '#506AF4')
+  }
+
+  return config
 }

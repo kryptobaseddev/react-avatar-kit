@@ -1,7 +1,7 @@
 /** Public type surface for react-avatar-kit. */
 
 export type Shape = 'circle' | 'rounded' | 'square' | 'none'
-export type HairStyle = 'short' | 'thick' | 'mohawk' | 'long' | 'bob' | 'none'
+export type HairStyle = 'short' | 'thick' | 'mohawk' | 'long' | 'bob' | 'buzz' | 'none'
 export type HatStyle = 'none' | 'beanie' | 'turban'
 export type EyeStyle = 'round' | 'oval' | 'smile'
 export type BrowStyle = 'straight' | 'arched'
@@ -10,7 +10,10 @@ export type NoseStyle = 'short' | 'round' | 'long'
 export type MouthStyle = 'smile' | 'laugh' | 'peace'
 export type ShirtStyle = 'tee' | 'hoodie' | 'polo'
 export type EarSize = 'small' | 'big'
-export type PaletteName = 'default' | 'pastel' | 'vivid' | 'mono'
+export type FacialHair = 'none' | 'moustache' | 'handlebar' | 'beard' | 'goatee' | 'stubble'
+export type Earring = 'none' | 'stud' | 'hoop'
+export type Headphones = 'none' | 'over-ear'
+export type PaletteName = 'default' | 'pastel' | 'vivid' | 'mono' | 'earth' | 'neon'
 
 /** Any CSS colour. Invalid values fall back to the generated colour. */
 export type AvatarColor = string
@@ -42,6 +45,10 @@ export interface AvatarOptions {
   shirt?: ShirtStyle
   shirtColor?: AvatarColor
   shape?: Shape
+  facialHair?: FacialHair
+  earring?: Earring
+  headphones?: Headphones
+  headphoneColor?: AvatarColor
 }
 
 /** A fully resolved, JSON-serialisable avatar description. */
@@ -64,6 +71,10 @@ export interface AvatarConfig {
   shirt: ShirtStyle
   shirtColor: AvatarColor
   shape: Shape
+  facialHair?: FacialHair
+  earring?: Earring
+  headphones?: Headphones
+  headphoneColor?: AvatarColor
 }
 
 /** Colour catalogue backing a palette. */

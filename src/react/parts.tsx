@@ -1,6 +1,9 @@
 import type { ReactElement, ReactNode } from 'react'
 import { brighten } from '../core/color'
 import type { AvatarConfig } from '../core/types'
+import { Headphones } from './art/accessories/headphones'
+import { HoopEarring } from './art/accessories/hoop'
+import { StudEarring } from './art/accessories/stud'
 import { BrowsArched, viewBox as browsArchedViewBox } from './art/brows/arched'
 import { BrowsStraight, viewBox as browsStraightViewBox } from './art/brows/straight'
 import { EarBig, viewBox as earBigViewBox } from './art/ear/big'
@@ -9,9 +12,15 @@ import { EyesOval, viewBox as eyesOvalViewBox } from './art/eyes/oval'
 import { EyesRound, viewBox as eyesRoundViewBox } from './art/eyes/round'
 import { EyesSmile, viewBox as eyesSmileViewBox } from './art/eyes/smile'
 import { Face, viewBox as faceViewBox } from './art/face'
+import { Beard } from './art/facial-hair/beard'
+import { Goatee } from './art/facial-hair/goatee'
+import { Handlebar } from './art/facial-hair/handlebar'
+import { Moustache } from './art/facial-hair/moustache'
+import { Stubble } from './art/facial-hair/stubble'
 import { GlassesRound, viewBox as glassesRoundViewBox } from './art/glasses/round'
 import { GlassesSquare, viewBox as glassesSquareViewBox } from './art/glasses/square'
 import { HairBob, viewBox as hairBobViewBox } from './art/hair/bob'
+import { HairBuzz } from './art/hair/buzz'
 import { HairLong, viewBox as hairLongViewBox } from './art/hair/long'
 import { HairMohawk, viewBox as hairMohawkViewBox } from './art/hair/mohawk'
 import { HairShort, viewBox as hairShortViewBox } from './art/hair/short'
@@ -87,6 +96,8 @@ function HairArt({ config, uid }: { config: AvatarConfig; uid: string }): ReactE
           <HairShort color={config.hairColor} uid={uid} />
         </Part>
       )
+    case 'buzz':
+      return <HairBuzz color={config.hairColor} uid={uid} />
     default:
       return null
   }
@@ -253,6 +264,48 @@ function ShirtArt({ config, uid }: { config: AvatarConfig; uid: string }): React
   }
 }
 
+function FacialHairArt({
+  config,
+  uid,
+}: {
+  config: AvatarConfig
+  uid: string
+}): ReactElement | null {
+  const color = config.hairColor
+  switch (config.facialHair) {
+    case 'moustache':
+      return <Moustache color={color} uid={uid} />
+    case 'handlebar':
+      return <Handlebar color={color} uid={uid} />
+    case 'beard':
+      return <Beard color={color} uid={uid} />
+    case 'goatee':
+      return <Goatee color={color} uid={uid} />
+    case 'stubble':
+      return <Stubble color={color} uid={uid} />
+    default:
+      return null
+  }
+}
+
+function AccessoriesArt({
+  config,
+  uid,
+}: {
+  config: AvatarConfig
+  uid: string
+}): ReactElement | null {
+  return (
+    <>
+      {config.earring === 'stud' ? <StudEarring uid={uid} /> : null}
+      {config.earring === 'hoop' ? <HoopEarring uid={uid} /> : null}
+      {config.headphones === 'over-ear' ? (
+        <Headphones color={config.headphoneColor ?? '#506AF4'} uid={uid} />
+      ) : null}
+    </>
+  )
+}
+
 /** Draws the layered avatar inside the root canvas. */
 export function AvatarArt({ config, uid }: { config: AvatarConfig; uid: string }): ReactElement {
   return (
@@ -262,12 +315,14 @@ export function AvatarArt({ config, uid }: { config: AvatarConfig; uid: string }
       </Part>
       {config.hat === 'none' ? <HairArt config={config} uid={uid} /> : null}
       <HatArt config={config} uid={uid} />
+      <FacialHairArt config={config} uid={uid} />
       <BrowsArt config={config} uid={uid} />
       <EyesArt config={config} uid={uid} />
       <GlassesArt config={config} uid={uid} />
       <EarArt config={config} uid={uid} />
       <NoseArt config={config} uid={uid} />
       <MouthArt config={config} uid={uid} />
+      <AccessoriesArt config={config} uid={uid} />
       <ShirtArt config={config} uid={uid} />
     </>
   )

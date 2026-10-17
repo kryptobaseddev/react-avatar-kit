@@ -3,12 +3,12 @@ import { Avatar } from '../../src/index'
 
 const SHAPES: Shape[] = ['circle', 'rounded', 'square', 'none']
 const SIZES = [32, 48, 64, 96, 128]
-const PALETTES: PaletteName[] = ['default', 'pastel', 'vivid', 'mono']
+const PALETTES: PaletteName[] = ['default', 'pastel', 'vivid', 'mono', 'earth', 'neon']
 const GALLERY = ['ada', 'grace', 'linus', 'margaret', 'radia', 'vint', 'guido', 'sophie']
 
 const PART_CASES: { label: string; options: AvatarOptions }[] = []
 
-for (const hair of ['short', 'thick', 'mohawk', 'long', 'bob', 'none'] as const) {
+for (const hair of ['short', 'thick', 'mohawk', 'long', 'bob', 'buzz', 'none'] as const) {
   PART_CASES.push({ label: `hair:${hair}`, options: { hair } })
 }
 for (const hat of ['none', 'beanie', 'turban'] as const) {
@@ -35,6 +35,13 @@ for (const shirt of ['tee', 'hoodie', 'polo'] as const) {
 for (const ears of ['small', 'big'] as const) {
   PART_CASES.push({ label: `ears:${ears}`, options: { ears } })
 }
+for (const facialHair of ['moustache', 'handlebar', 'beard', 'goatee', 'stubble'] as const) {
+  PART_CASES.push({ label: `facialHair:${facialHair}`, options: { facialHair } })
+}
+for (const earring of ['stud', 'hoop'] as const) {
+  PART_CASES.push({ label: `earring:${earring}`, options: { earring } })
+}
+PART_CASES.push({ label: 'headphones:over-ear', options: { headphones: 'over-ear' } })
 
 function Cell({ label, children }: { label: string; children: React.ReactNode }) {
   return (
