@@ -7,6 +7,7 @@ What has actually been run against the published artifact, and what that implies
 | Target | How it was checked | Result |
 | --- | --- | --- |
 | **Next.js 16.4.2, App Router** | Packed the tarball, installed it in a fresh app, rendered `<Avatar seed="ada@example.com" size={96} alt="Ada" />` and `<Avatar config={createAvatar('…')} />` from `app/page.tsx` (no `"use client"`), ran `next build` and `next start`. | Build succeeds; `/` prerenders as a static server component; the served HTML contains `<svg … role="img" aria-label="Ada">`. |
+| **WebKit 27.2 (Safari engine)** | Rendered a six-avatar set (long hair, beanie, beanie + glasses, turban, mohawk two-tone, gradient and transparent canvases) under Playwright WebKit and Chromium at 360 px. | Visually identical: nested SVGs, masks, clip paths and gradients all resolve the same. |
 | **Vite 8 + React 19.3** | The playground in `site/` imports the source directly and is built by Vite. | Builds, runs, e2e 9/9. |
 | **react-dom/server (SSR)** | `scripts/check-ssr.mjs` renders through `react-dom/server` and loads the package under the `react-server` export condition. | No hooks, no `react-dom` in the client entry. |
 | **React 18 and 19 consumers** | `scripts/check-consumer.mjs` installs the packed tarball into throwaway projects and renders + typechecks. | Renders identically; declarations resolve under `bundler`, `node16`, and strict `skipLibCheck: false`. |
