@@ -4,6 +4,17 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.1.1 — 2026-10-17
+
+### Fixed
+
+- Facial hair is now drawn in the face artwork's own coordinate space and clipped to the
+  head silhouette, so beards and stubble wrap the whole jaw and the mouth opening is clean.
+- The hoop earring sits at the earlobe instead of hanging below the ear.
+- Over-ear headphones use a single visible band that rises from the left cup and tucks into
+  the hair at the crown, with no full helmet arc.
+- The buzz cut follows the skull without exposing scalp at the crown.
+
 ## 1.1.0 — 2026-10-17
 
 ### Added

@@ -4,11 +4,12 @@ import type { ArtProps } from '../types'
 export const viewBox = '0 0 200 200'
 
 export function HoopEarring(_props: ArtProps): ReactElement {
+  const d = 'M48.5 119a5.5 5.5 0 1 0 11 0'
   return (
     <>
-      <circle cx="56" cy="121" r="1.6" fill="#171921" />
-      <path d="M51.5 123.5a5.5 5.5 0 1 0 9 0" fill="none" stroke="#171921" strokeWidth="4.5" />
-      <path d="M51.5 123.5a5.5 5.5 0 1 0 9 0" fill="none" stroke="#F4D150" strokeWidth="2.4" />
+      <circle cx="54" cy="116" r="1.7" fill="#171921" />
+      <path d={d} fill="none" stroke="#171921" strokeWidth="4.5" />
+      <path d={d} fill="none" stroke="#F4D150" strokeWidth="2.4" />
     </>
   )
 }
