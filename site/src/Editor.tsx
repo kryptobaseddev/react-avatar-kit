@@ -37,13 +37,10 @@ function ChipGroup<T extends string>({
   options: readonly T[]
   onChange: (value: T) => void
 }) {
-  const labelId = `${testId}-label`
   return (
-    <div className="field">
-      <span className="field__label" id={labelId}>
-        {label}
-      </span>
-      <div className="chips" data-testid={testId} role="group" aria-labelledby={labelId}>
+    <fieldset className="field">
+      <legend className="field__label">{label}</legend>
+      <div className="chips" data-testid={testId}>
         {options.map((option) => (
           <button
             key={option}
@@ -57,7 +54,7 @@ function ChipGroup<T extends string>({
           </button>
         ))}
       </div>
-    </div>
+    </fieldset>
   )
 }
 
@@ -143,16 +140,9 @@ export function Editor({ config, onChange, onBackgroundMode, onReset }: EditorPr
           </section>
 
           <section className="editor__section">
-            <div className="field">
-              <span className="field__label" id="background-mode-label">
-                Background
-              </span>
-              <div
-                className="chips"
-                data-testid="background-mode"
-                role="group"
-                aria-labelledby="background-mode-label"
-              >
+            <fieldset className="field">
+              <legend className="field__label">Background</legend>
+              <div className="chips" data-testid="background-mode">
                 <button
                   type="button"
                   className="chip"
@@ -172,7 +162,7 @@ export function Editor({ config, onChange, onBackgroundMode, onReset }: EditorPr
                   gradient
                 </button>
               </div>
-            </div>
+            </fieldset>
             {gradient ? (
               <>
                 <ColorField
