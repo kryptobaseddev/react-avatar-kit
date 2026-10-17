@@ -260,7 +260,7 @@ export function AvatarArt({ config, uid }: { config: AvatarConfig; uid: string }
       <Part box={layout.face} viewBox={faceViewBox}>
         <Face color={config.skin} uid={uid} />
       </Part>
-      <HairArt config={config} uid={uid} />
+      {config.hat === 'none' ? <HairArt config={config} uid={uid} /> : null}
       <HatArt config={config} uid={uid} />
       <BrowsArt config={config} uid={uid} />
       <EyesArt config={config} uid={uid} />

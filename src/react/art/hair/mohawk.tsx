@@ -7,7 +7,7 @@ import type { ArtProps } from '../types'
 export const viewBox = '0 0 240 203'
 
 export function HairMohawk({ color = '#171921', colorRandom }: ArtProps): ReactElement {
-  const mainColor = colorRandom ? color : '#171921'
+  const mainColor = color
   const subColor = colorRandom ? brighten(color, 0.18) : '#717376'
   return (
     <>

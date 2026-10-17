@@ -151,6 +151,15 @@ describe('<Avatar />', () => {
     expect(new Set(all).size).toBe(all.length)
   })
 
+  it('does not draw hair through a hat', () => {
+    const withHat = render(<Avatar seed="ada" hat="beanie" hair="mohawk" hairColor="#ff0000" />)
+    expect(withHat.container.innerHTML).not.toContain('#ff0000')
+    withHat.unmount()
+
+    const withoutHat = render(<Avatar seed="ada" hat="none" hair="mohawk" hairColor="#ff0000" />)
+    expect(withoutHat.container.innerHTML).toContain('#ff0000')
+  })
+
   it('renders every documented part variant', () => {
     const hairs: HairStyle[] = ['short', 'thick', 'mohawk', 'long', 'bob', 'none']
     const hats: HatStyle[] = ['none', 'beanie', 'turban']

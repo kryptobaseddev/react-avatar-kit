@@ -115,10 +115,10 @@ interface AvatarOptions {
 | `palette` | `"default" \| "pastel" \| "vivid" \| "mono"` | `"default"` | Colour family used for generated colours. Explicit colours always win. |
 | `background` | `string \| AvatarGradient` | generated | CSS colour or `{ from, to, angle? }` gradient. |
 | `skin` | `string` | generated | Any CSS colour. |
-| `hair` | `"short" \| "thick" \| "mohawk" \| "long" \| "bob" \| "none"` | generated | `"none"` renders no hair; a hat takes its place visually. |
+| `hair` | `"short" \| "thick" \| "mohawk" \| "long" \| "bob" \| "none"` | generated | Only drawn when `hat` is `"none"`, so hats keep their silhouette. |
 | `hairColor` | `string` | generated | Any CSS colour. |
-| `highlight` | `boolean` | `false` | Adds a lighter second tone to hair (`thick`, `mohawk`) and shirt folds. |
-| `hat` | `"none" \| "beanie" \| "turban"` | generated | Usually `"none"`. |
+| `highlight` | `boolean` | `false` | Adds the lighter second tone to the mohawk artwork. Shirts always keep their built-in fold shading. |
+| `hat` | `"none" \| "beanie" \| "turban"` | generated | Usually `"none"`. A hat replaces the hair silhouette; `hair` stays in the config. |
 | `hatColor` | `string` | generated | Any CSS colour. |
 | `ears` | `"small" \| "big"` | generated | |
 | `eyes` | `"round" \| "oval" \| "smile"` | generated | |
