@@ -37,7 +37,7 @@ export default defineConfig({
       testMatch: '**/*.visual.ts',
       use: {
         ...devices['Desktop Chrome'],
-        viewport: { width: 1280, height: 900 },
+        viewport: { width: 1280, height: 1700 },
         deviceScaleFactor: 1,
         colorScheme: 'dark',
         reducedMotion: 'reduce',

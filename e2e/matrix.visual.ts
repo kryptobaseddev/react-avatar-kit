@@ -24,6 +24,12 @@ test.describe('visual regression matrix', () => {
     )
   })
 
+  test('shape and size combinations', async ({ page }) => {
+    await expect(page.getByTestId('matrix-combinations').locator('.matrix__grid')).toHaveScreenshot(
+      'combinations.png',
+    )
+  })
+
   test('palettes', async ({ page }) => {
     await expect(page.getByTestId('matrix-palettes').locator('.matrix__grid')).toHaveScreenshot(
       'palettes.png',

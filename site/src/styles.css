@@ -679,22 +679,22 @@ h1 {
   margin-top: 28px;
 }
 
-.matrix h2 {
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 0 0 12px;
-}
-
 .matrix__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 120px);
   gap: 12px;
 }
 
-.matrix__grid--sizes {
-  align-items: end;
+.matrix__grid--sizes,
+.matrix__grid--combinations {
+  grid-template-columns: repeat(5, 152px);
+}
+
+.matrix__grid--sizes .matrix__cell,
+.matrix__grid--combinations .matrix__cell {
+  width: 152px;
+  height: 152px;
+  align-content: center;
 }
 
 .matrix__cell {

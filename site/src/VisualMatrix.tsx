@@ -51,8 +51,7 @@ function Cell({ label, children }: { label: string; children: React.ReactNode })
 export function VisualMatrix() {
   return (
     <div className="matrix" data-testid="visual-matrix">
-      <section data-testid="matrix-shapes">
-        <h2>Shapes</h2>
+      <section data-testid="matrix-shapes" aria-label="Shapes">
         <div className="matrix__grid">
           {SHAPES.map((shape) => (
             <Cell key={shape} label={shape}>
@@ -62,8 +61,7 @@ export function VisualMatrix() {
         </div>
       </section>
 
-      <section data-testid="matrix-sizes">
-        <h2>Sizes</h2>
+      <section data-testid="matrix-sizes" aria-label="Sizes">
         <div className="matrix__grid matrix__grid--sizes">
           {SIZES.map((size) => (
             <Cell key={size} label={`${size}px`}>
@@ -73,8 +71,7 @@ export function VisualMatrix() {
         </div>
       </section>
 
-      <section data-testid="matrix-parts">
-        <h2>Parts</h2>
+      <section data-testid="matrix-parts" aria-label="Parts">
         <div className="matrix__grid">
           {PART_CASES.map((item, index) => (
             <Cell key={item.label} label={item.label}>
@@ -84,8 +81,19 @@ export function VisualMatrix() {
         </div>
       </section>
 
-      <section data-testid="matrix-palettes">
-        <h2>Palettes</h2>
+      <section data-testid="matrix-combinations" aria-label="Shape × size">
+        <div className="matrix__grid matrix__grid--combinations">
+          {SHAPES.flatMap((shape) =>
+            SIZES.map((size) => (
+              <Cell key={`${shape}-${size}`} label={`${shape}:${size}`}>
+                <Avatar seed={`matrix-combo-${shape}`} shape={shape} size={size} />
+              </Cell>
+            )),
+          )}
+        </div>
+      </section>
+
+      <section data-testid="matrix-palettes" aria-label="Palettes">
         <div className="matrix__grid">
           {PALETTES.flatMap((palette) =>
             GALLERY.map((seed) => (
