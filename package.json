@@ -1,6 +1,6 @@
 {
   "name": "react-avatar-kit",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Deterministic, zero-dependency avatar kit for React 18 and 19. One seed in, one memorable avatar out.",
   "keywords": [
     "react",
