@@ -70,6 +70,26 @@ test.describe('playground', () => {
     expect(bytes.subarray(0, 8).toString('hex')).toBe('89504e470d0a1a0a')
   })
 
+  test('editor controls are exposed as labelled groups', async ({ page }) => {
+    await page.goto('/')
+    for (const name of [
+      'Shape',
+      'Palette',
+      'Hair',
+      'Hat',
+      'Eyes',
+      'Brows',
+      'Glasses',
+      'Nose',
+      'Mouth',
+      'Ears',
+      'Shirt',
+      'Background',
+    ]) {
+      await expect(page.getByRole('group', { name, exact: true })).toBeVisible()
+    }
+  })
+
   test('a gallery seed loads into the studio', async ({ page }) => {
     await page.goto('/')
     await page.getByRole('button', { name: 'Use seed margaret' }).click()

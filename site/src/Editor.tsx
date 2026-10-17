@@ -37,10 +37,13 @@ function ChipGroup<T extends string>({
   options: readonly T[]
   onChange: (value: T) => void
 }) {
+  const labelId = `${testId}-label`
   return (
     <div className="field">
-      <span className="field__label">{label}</span>
-      <div className="chips" data-testid={testId}>
+      <span className="field__label" id={labelId}>
+        {label}
+      </span>
+      <div className="chips" data-testid={testId} role="group" aria-labelledby={labelId}>
         {options.map((option) => (
           <button
             key={option}
@@ -141,8 +144,15 @@ export function Editor({ config, onChange, onBackgroundMode, onReset }: EditorPr
 
           <section className="editor__section">
             <div className="field">
-              <span className="field__label">Background</span>
-              <div className="chips" data-testid="background-mode">
+              <span className="field__label" id="background-mode-label">
+                Background
+              </span>
+              <div
+                className="chips"
+                data-testid="background-mode"
+                role="group"
+                aria-labelledby="background-mode-label"
+              >
                 <button
                   type="button"
                   className="chip"
