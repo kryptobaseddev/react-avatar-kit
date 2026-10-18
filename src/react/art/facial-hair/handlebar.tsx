@@ -5,10 +5,10 @@ import { FaceLayer } from './face-layer'
 export function Handlebar({ color = '#171921' }: ArtProps): ReactElement {
   return (
     <FaceLayer>
-      <g fill="none" stroke={color} strokeWidth="5" strokeLinecap="round">
-        <path d="M116 180c-9-8-17-7-21 1-2 4-1 7 2 9" />
-        <path d="M116 180c9-8 17-7 21 1 2 4 1 7-2 9" />
-      </g>
+      <path
+        fill={color}
+        d="M116 184C104 175 92 178 92 189c0 8 6 14 12 16 4-10 8-14 12-16 4 2 8 6 12 16 6-2 12-8 12-16 0-11-12-14-24-5Z"
+      />
     </FaceLayer>
   )
 }

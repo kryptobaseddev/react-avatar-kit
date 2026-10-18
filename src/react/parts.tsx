@@ -337,8 +337,8 @@ export function AvatarArt({ config, uid }: { config: AvatarConfig; uid: string }
       <GlassesArt config={config} uid={uid} />
       <EarArt config={config} uid={uid} />
       <NoseArt config={config} uid={uid} />
-      <MouthArt config={config} uid={uid} />
       <FacialHairArt config={config} uid={uid} />
+      <MouthArt config={config} uid={uid} />
       {hasHeadphones && !bandUnderHair && !headphonesUnderHat ? (
         <HeadphonesBand color={bandColor} uid={uid} />
       ) : null}

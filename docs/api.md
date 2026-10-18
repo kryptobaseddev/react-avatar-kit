@@ -128,7 +128,7 @@ interface AvatarOptions {
 | `shirt` | `"tee" \| "hoodie" \| "polo"` | generated | |
 | `shirtColor` | `string` | generated | Any CSS colour. |
 | `shape` | `"circle" \| "rounded" \| "square" \| "none"` | `"circle"` | Stored in the config so `<Avatar {...config} />` round-trips. |
-| `facialHair` | `"none" \| "moustache" \| "handlebar" \| "beard" \| "goatee" \| "stubble"` | `"none"` | Opt-in 1.1 part; not generated for new seeds so seeded output stays stable. |
+| `facialHair` | `"none" \| "moustache" \| "handlebar" \| "beard" \| "goatee" \| "stubble"` | `"none"` | Opt-in 1.1 part; `handlebar` draws a walrus silhouette. Not generated for new seeds so seeded output stays stable. |
 | `earring` | `"none" \| "stud" \| "hoop"` | `"none"` | Opt-in 1.1 accessory on the earlobe. |
 | `headphones` | `"none" \| "over-ear"` | `"none"` | Opt-in 1.1 accessory drawn above hair and hats. |
 | `headphoneColor` | `string` | `"#506AF4"` | Only used when `headphones` is set. |

@@ -4,6 +4,16 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.1.4 — 2026-10-17
+
+### Fixed
+
+- The mouth now renders above facial hair, so smile, laugh and peace stay readable with a
+  beard; the beard opening is wide enough to leave a skin margin around the mouth.
+- The full beard and stubble include a moustache above the lip.
+- The `handlebar` style is redesigned as a walrus moustache: broad over the lip with ends
+  drooping past the mouth corners.
+
 ## 1.1.3 — 2026-10-17
 
 ### Fixed
