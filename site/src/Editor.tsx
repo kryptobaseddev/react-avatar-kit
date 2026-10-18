@@ -232,6 +232,14 @@ export function Editor({ config, onChange, onBackgroundMode, onReset }: EditorPr
               value={config.hairColor}
               onChange={(value) => onChange('hairColor', value)}
             />
+            {config.hat !== 'none' ? (
+              <ColorField
+                label="Hat color"
+                testId="hat-color"
+                value={config.hatColor}
+                onChange={(value) => onChange('hatColor', value)}
+              />
+            ) : null}
             <label className="toggle">
               <input
                 type="checkbox"

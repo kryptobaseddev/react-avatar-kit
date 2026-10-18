@@ -4,6 +4,21 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.1.3 — 2026-10-17
+
+### Fixed
+
+- Headphones now render underneath beanies and turbans.
+- The headphone band ends with a gentle curve into the hair instead of a hard downward hook.
+- Moustache and goatee moustache sit closer to the nose.
+- Handlebar moustache is wider, reaching from cheek to cheek.
+- Hoop earring sits on the earlobe rather than at the front edge of the ear.
+
+### Added
+
+- A Hat colour control in the playground (visible when a hat is selected); generated hat
+  colours come from the palette's `hats` list and explicit `hatColor` wins.
+
 ## 1.1.2 — 2026-10-17
 
 ### Fixed

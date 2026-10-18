@@ -118,7 +118,7 @@ interface AvatarOptions {
 | `hairColor` | `string` | generated | Any CSS colour. |
 | `highlight` | `boolean` | `false` | Adds the lighter second tone to the mohawk artwork. Shirts always keep their built-in fold shading. |
 | `hat` | `"none" \| "beanie" \| "turban"` | generated | Usually `"none"`. A hat replaces the hair silhouette; `hair` stays in the config. |
-| `hatColor` | `string` | generated | Any CSS colour. |
+| `hatColor` | `string` | generated | Any CSS colour. Generated values come from the palette's `hats` list; an explicit value always wins. |
 | `ears` | `"small" \| "big"` | generated | |
 | `eyes` | `"round" \| "oval" \| "smile"` | generated | |
 | `brows` | `"straight" \| "arched"` | generated | Independent of hair. |

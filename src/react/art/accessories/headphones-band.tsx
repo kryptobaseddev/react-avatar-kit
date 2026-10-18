@@ -8,7 +8,7 @@ export const viewBox = '0 0 200 200'
  * at the crown instead of looping over it.
  */
 export function HeadphonesBand({ color = '#506AF4' }: ArtProps): ReactElement {
-  const d = 'M56 92C54 50 72 42 96 52'
+  const d = 'M56 92C55 52 72 40 94 43'
   return (
     <g>
       <path d={d} fill="none" stroke="#171921" strokeWidth="9" strokeLinecap="round" />
